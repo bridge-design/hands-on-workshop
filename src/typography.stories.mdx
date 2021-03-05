@@ -1,0 +1,16 @@
+import { Meta, Typeset, Story } from '@storybook/addon-docs/blocks';
+import { fontFamilies, fontSizes, fontWeights } from './tokens.js';
+
+<Meta title="Typography" />
+
+# Typography
+
+<p><b>Font:</b> {fontFamilies.regular}</p>
+<p><b>Weight:</b> {fontWeights.regular}</p>
+
+<Typeset
+  sampleText="Design systems are awesome"
+  fontSizes={ Object.values(fontSizes)}
+  fontWeight={Object.values(fontWeights)}
+  style={{ letterSpacing: "normal", lineHeight: "48px" }}
+/>
