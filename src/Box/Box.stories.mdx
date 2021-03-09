@@ -1,0 +1,24 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import Box from "./";
+
+<Meta title="Box" />
+
+## Box
+
+The Box component provides a container, inside which you can put other components. It is used in the stories (documentation) to separate one component from another.
+
+<Canvas>
+  <Story name="Default">
+  <div>
+    <Box>Some text in box</Box>
+    <Box color="#1b8ceb" textColor="#ffffff" tone={2}>
+      Some text in box
+    </Box>
+    <Box color="#00d1b2" textColor="#ffffff" padding="0.4rem">
+      Some text in box
+    </Box>
+  </div>
+  </Story>
+</Canvas>
+

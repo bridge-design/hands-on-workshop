@@ -1,19 +1,13 @@
 /*
  * Section component provides a container with paddings.
  */
-import React from 'react';
-import { node, arrayOf, oneOfType } from 'prop-types';
+import React from "react";
+import { node, arrayOf, oneOfType } from "prop-types";
 /*
  * For its styles, Section component uses plain CSS.
  * Change it to styled-components, if you want.
  */
-import './styles.css';
-
-/*
- * Even though the component is using plain CSS, it still can re-use
- * styled-components from other patterns.
- */
-import * as ts from '../Typography/styles.js';
+import "./styles.css";
 
 /*
  * Note! When using plain CSS, the class names have to be provided manually.
@@ -21,15 +15,13 @@ import * as ts from '../Typography/styles.js';
 const Section = ({ children }) => {
   return (
     <div className="section">
-      <div className="section__inner">
-        {children}
-      </div>
+      <div className="section__inner">{children}</div>
     </div>
   );
 };
 
 Section.propTypes = {
-  children: oneOfType([arrayOf(node), node])
+  children: oneOfType([arrayOf(node), node]),
 };
 
 export default Section;
@@ -40,22 +32,21 @@ export default Section;
  * these wrappers are used.
  */
 const SectionHeader = ({ children }) => {
-  return (<ts.Header1>{children}</ts.Header1>);
+  return <h1>{children}</h1>;
 };
 
 SectionHeader.propTypes = {
-  children: oneOfType([arrayOf(node), node])
+  children: oneOfType([arrayOf(node), node]),
 };
 
 export { SectionHeader };
 
-
 const SectionText = ({ children }) => {
-  return (<ts.P>{children}</ts.P>);
+  return <p>{children}</p>;
 };
 
 SectionText.propTypes = {
-  children: oneOfType([arrayOf(node), node])
+  children: oneOfType([arrayOf(node), node]),
 };
 
 export { SectionText };
