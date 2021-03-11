@@ -1,11 +1,16 @@
-import React from 'react'
+module.exports = (name) => `
+import React from "react";
+import styled from "styled-components";
 
-// Imports
+/* ${name}
+ *
+ * TODO: add component description
+ */
+const ${name} = (props) => {
+  return <Styled${name}>${name}</Styled${name}>;
+};
 
-const Template = (props) => {
-  return (
-    <s.Template>Template</s.Template>
-  )
-}
+export const Styled${name} = styled.div\`\`;
 
-export default Template
+export default ${name};
+`;
