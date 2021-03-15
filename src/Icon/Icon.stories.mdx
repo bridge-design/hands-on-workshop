@@ -1,58 +1,44 @@
-import { Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
-import Icon from "./";
-import Box from "../Box";
+
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import Icon from ".";
+import {colors as themeColors} from "../tokens.js"
 
 <Meta title="Icon" />
 
-
 ## Icon
 
-The Icon component renders icons in different colors. This component can be used in other components
+SVG icons with customizable color and size, mainly to be used inside the buttons
 
 <Canvas>
   <Story name="Default">
-    <div>
-      <Box>
-        <Icon name="star" color="#000" />
-        <Icon name="star" color="#888888" />
-        <Icon name="github" color="#1b8ceb" hasBorder />
-        <Icon name="gift" color="#00d1b2" />
-        <Icon name="bug" color="#e91e63" />
-      </Box>
-      <Box>
-        <Icon name="star" color="#000" isInverted />
-        <Icon name="star" color="#888888" isInverted />
-        <Icon name="github" color="#1b8ceb" isInverted />
-        <Icon name="gift" color="#00d1b2" isInverted />
-        <Icon name="bug" color="#e91e63" isInverted />
-      </Box>
-      <Box>
-        <Icon name="star" color="#000" isCircular hasBorder />
-        <Icon name="github" color="#1b8ceb" isCircular isInverted />
-        <Icon name="bug" color="#00d1b2" isCircular isInverted />
-      </Box>
-    </div>
+  <Box>
+    <Icon name="heart"/>
+    <Icon name="settings"/>
+    <Icon name="arrowBack"/>
+  </Box>
   </Story>
 </Canvas>
 
 <Canvas>
-  <Story name="With Different Sizes">
-    <Box>
-      <Icon name="star" color="#000" isInverted size="0.785rem" />
-      <Icon name="star" color="#888888" isInverted />
-      <Icon name="github" color="#1b8ceb" isInverted size="1.5rem" />
-      <Icon name="gift" color="#00d1b2" isInverted size="2.0rem" />
-      <Icon name="bug" color="#e91e63" isInverted size="3rem" />
-    </Box>
-  </Story>
-</Canvas>
-
-<Canvas>
-  <Story name="Social Icons">
-    <Box>
-      <Icon name="twitter" color="#000" isInverted />
-      <Icon name="linkedin" color="#888888" isInverted />
-      <Icon name="github" color="#1b8ceb" isInverted />
-    </Box>
+  <Story name="Colored">
+  <Box>
+    <Icon name="heart" color={themeColors.primary}/>
+    <Icon name="heart" color={themeColors.orange}/>
+    <Icon name="heart" color={themeColors.yellow}/>
+    <Icon name="heart" color={themeColors.gray2}/>
+  </Box>
+  <Box>
+    <Icon name="settings" color={themeColors.primary}/>
+    <Icon name="settings" color={themeColors.orange}/>
+    <Icon name="settings" color={themeColors.yellow}/>
+    <Icon name="settings" color={themeColors.gray2}/>
+  </Box>
+  <Box>
+    <Icon name="arrowBack" color={themeColors.primary}/>
+    <Icon name="arrowBack" color={themeColors.orange}/>
+    <Icon name="arrowBack" color={themeColors.yellow}/>
+    <Icon name="arrowBack" color={themeColors.gray2}/>
+  </Box>
   </Story>
 </Canvas>

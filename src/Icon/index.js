@@ -1,35 +1,26 @@
-/*
- * The Icon component renders icons in different colors. This component
- * can be used in other components. For example, in the TeamMember component.
+import React from "react";
+import styled from "styled-components";
+
+import SettingsIcon from "../../assets/icons/setting.svg";
+import HeartIcon from "../../assets/icons/heart.svg";
+import ArrowBackIcon from "../../assets/icons/arrowBack.svg";
+/* Icon
+ *
+ * SVG icons wrapper
  */
 
-import React from 'react';
-import cx from 'classnames';
-import * as s from './styles';
-import { string, bool } from 'prop-types';
-
-
-const Icon = ({ as = 'i', name, isInverted, ...props }) => {
-  /* Adding an "API" classname, by which it is possible to redefine the component style properties */
-  const className = cx(`icon fa fa-${name}`, props.className);
-
-  /* Redefine an HTML tag for the icon according to the given properties. By default, <i> */
-  const Element = s.Icon.withComponent(as);
-
+const icons = {
+  settings: SettingsIcon,
+  heart: HeartIcon,
+  arrowBack: ArrowBackIcon,
+};
+const Icon = ({ name, width = 24, height = 24, color = "#000", ...props }) => {
+  const SvgIcon = icons[name];
   return (
-    <Element {...props} isOutlined={!isInverted} isInverted={false} className={className} />
+    <span className="icon" {...props} css={{ display: "inline-block" }}>
+      <SvgIcon fill={color} width={width} height={height} />
+    </span>
   );
-};
-
-Icon.defaultProps = {
-  size: 'normal'
-};
-
-Icon.propTypes = {
-  as: string,
-  name: string,
-  isInverted: bool,
-  className: string
 };
 
 export default Icon;
