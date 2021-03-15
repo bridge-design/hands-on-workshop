@@ -9,7 +9,7 @@
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
-    "demo": "webpack-dev-server --config webpack.demo.config.js --content-base build --history-api-fallback",
+    "demo": "webpack serve --config webpack.demo.config.js --mode=development --content-base build --history-api-fallback",
     "flow": "flow",
     "create-component": "node ./node_modules/add-component/index.js --no-index"
   },
@@ -69,7 +69,8 @@
     "prettier": "^2.2.1",
     "url-loader": "^0.6.2",
     "webpack": "^4.46.0",
-    "webpack-dev-server": "^2.11.5",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
     "webpack-node-externals": "^1.7.2",
     "yargs": "^8.0.2"
   },
