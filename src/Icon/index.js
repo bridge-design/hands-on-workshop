@@ -17,7 +17,7 @@ const icons = {
 const Icon = ({ name, width = 24, height = 24, color = "#000", ...props }) => {
   const SvgIcon = icons[name];
   return (
-    <span className="icon" {...props} css={{ display: "inline-block" }}>
+    <span className="icon" {...props} css={{ display: "flex" }}>
       <SvgIcon fill={color} width={width} height={height} />
     </span>
   );

@@ -4,34 +4,77 @@
  * as different components and imported here.
  */
 
-import React from 'react';
-import cx from 'classnames';
-import * as s from './styles';
-import { string } from 'prop-types';
+import React from "react";
+import styled, { css } from "styled-components";
+import { colors } from "../tokens.js";
+import { string } from "prop-types";
+
+const StyledButton = styled.button`
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  /* height: 2.4em; */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid;
+  border-color: transparent;
+  box-sizing: border-box;
+  line-height: 24px;
+  position: relative;
+  user-select: none;
+  text-decoration: none;
+  border-radius: ${(p) => (p.isRounded || p.isIcon ? "1rem" : null)};
+  padding: ${(p) => (p.isIcon ? ".75rem" : "1rem")};
+  background-color: ${(p) => (p.color ? p.color : colors.primary)};
+  opacity: ${(p) => (p.disabled ? 0.6 : 1)};
+  color: ${(p) => (p.textColor ? p.textColor : colors.white)};
+  font-size: ${(p) => (p.size ? p.size : "14px")};
+  width: ${(p) => (p.isStretched ? "100%" : null)};
+  ${(p) =>
+    (p.isOutline || p.isIcon) &&
+    `
+   background-color: transparent;
+   border-color: ${colors.gray4};
+   color: ${colors.black};`}
+
+  & .icon {
+    margin: 0;
+    font-size: ${(p) => (p.size ? p.size : "1rem")};
+  }
+
+  &:not(:last-child) {
+    margin: 0 0.25em 0 0;
+  }
+`;
+
+const StyledButtonLink = styled(StyledButton).attrs({ as: "a" })`
+  pointer-events: ${(props) => (props.disabled ? "none" : "default")};
+`;
 
 const Button = ({ href, children, ...props }) => {
-   /* Check the button to a href attribute */
+  /* Check the button to a href attribute */
   let isButtonLink = href ? true : false;
-
-  /* Adding an "API" classname, by which it is possible to redefine the component style properties */
-  let className = cx(
-    isButtonLink ? 'button button--link' : 'button', 
-    props.className
-  );
 
   /*
    * Different buttons to be rendered, depending on the
    * given properties
    */
   if (isButtonLink) {
-    return <s.ButtonLink href={href} {...props} className={className}>{children}</s.ButtonLink>;
+    return (
+      <StyledButtonLink href={href} {...props}>
+        {children}
+      </StyledButtonLink>
+    );
   } else {
-    return <s.Button {...props} className={className}>{children}</s.Button>;
+    return <StyledButton {...props}>{children}</StyledButton>;
   }
 };
 
 Button.propTypes = {
-  href: string
+  href: string,
 };
 
 export default Button;
