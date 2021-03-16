@@ -1,9 +1,22 @@
 # Development
-## Run Storybook
 
+1. Install dependencies
 ```
 npm install
+```
+
+2. Run Storybook
+
+```
 npm start
+```
+
+3. Run tests
+
+Run in separsate terminal window:
+
+ ```
+yarn creevey --ui
 ```
 
 ## Tools
