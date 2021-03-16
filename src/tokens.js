@@ -17,6 +17,7 @@ export const colors = {
   gray1: "rgba(79, 79, 79, 1)",
   white: "rgba(255, 255, 255, 1)",
   black: "rgba(51, 51, 51, 1)",
+  primary: "#f15223",
 };
 
 export const fontFamilies = {
