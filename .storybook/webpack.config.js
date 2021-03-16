@@ -8,7 +8,7 @@
 
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const pathToInlineSvg = path.resolve(__dirname, '../assets');
 module.exports = {
   plugins: [
     new CopyWebpackPlugin([
@@ -31,13 +31,21 @@ module.exports = {
         loaders: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         loaders: [
           'url-loader?limit=10000',
           'img-loader'
         ],
         include: path.resolve(__dirname, '../')
-      }
+      },
+      {
+      test: /\.svg$/,
+      
+      issuer: {
+        test: /\.(js|ts)x?$/,
+      },
+      use: ['@svgr/webpack', "file-loader"],
+    }
     ],
   }
 };

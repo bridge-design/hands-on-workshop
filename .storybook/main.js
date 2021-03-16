@@ -1,4 +1,6 @@
 const path = require("path");
+const pathToInlineSvg = path.resolve(__dirname, "../assets");
+
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.js"],
   addons: [
@@ -19,6 +21,25 @@ module.exports = {
       require.resolve("@babel/preset-react"),
       require.resolve("@babel/preset-env"),
     ];
+
+    // SVGR
+    const rules = config.module.rules;
+    // modify storybook's file-loader rule to avoid conflicts with svgr
+    const fileLoaderRule = rules.find((rule) => rule.test.test(".svg"));
+    fileLoaderRule.exclude = pathToInlineSvg;
+
+    rules.push({
+      test: /\.svg$/,
+      include: pathToInlineSvg,
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            icon: true,
+          },
+        },
+      ],
+    });
 
     // config.module.rules[0].use[0].options.plugins = [
     //   // use @babel/plugin-proposal-class-properties for class arrow functions
