@@ -11,7 +11,7 @@
     "deploy-storybook": "storybook-to-ghpages",
     "demo": "webpack-dev-server --config webpack.demo.config.js --content-base build --history-api-fallback",
     "flow": "flow",
-    "create-component": "node ./node_modules/add-component/index.js --no-index"
+    "create-component": "node .add-component/index.js"
   },
   "eslintIgnore": [
     "demo",
@@ -51,7 +51,6 @@
     "@storybook/addons": "^6.1.21",
     "@storybook/react": "6.1.21",
     "@storybook/storybook-deployer": "^2.8.7",
-    "add-component": "^2.5.0",
     "babel-eslint": "7.2.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",

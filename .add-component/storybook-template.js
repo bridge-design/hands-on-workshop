@@ -1,9 +1,17 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+module.exports = (name) => `
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 
-import Template from '.'
+import ${name} from ".";
 
-storiesOf('Template', module)
-  .add('index', () => (
-    <Template />
-  ))
+<Meta title="${name}" />
+
+## ${name}
+
+TODO: add component description
+
+<Canvas>
+  <Story name="Default">
+    <${name}/>
+  </Story>
+</Canvas>
+`;
