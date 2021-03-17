@@ -6,13 +6,15 @@
 
 import React from "react";
 import styled, { css } from "styled-components";
-import { colors } from "../tokens.js";
+import * as colors from '../../tokens/colors';
 import { string } from "prop-types";
 
 const StyledButton = styled.button`
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
+  
+  
   /* height: 2.4em; */
   display: inline-flex;
   align-items: center;
@@ -28,17 +30,17 @@ const StyledButton = styled.button`
   text-decoration: none;
   border-radius: ${(p) => (p.isRounded || p.isIcon ? "1rem" : null)};
   padding: ${(p) => (p.isIcon ? ".75rem" : "1rem")};
-  background-color: ${(p) => (p.color ? p.color : colors.primary)};
+  background-color: ${(p) => (p.color ? p.color : colors.primaryOrange100)};
   opacity: ${(p) => (p.disabled ? 0.6 : 1)};
-  color: ${(p) => (p.textColor ? p.textColor : colors.white)};
+  color: ${(p) => (p.textColor ? p.textColor : colors.secondaryWhite100)};
   font-size: ${(p) => (p.size ? p.size : "14px")};
   width: ${(p) => (p.isStretched ? "100%" : null)};
   ${(p) =>
     (p.isOutline || p.isIcon) &&
     `
    background-color: transparent;
-   border-color: ${colors.gray4};
-   color: ${colors.black};`}
+   border-color: ${colors.secondaryBlack20};
+   color: ${colors.secondaryBlack100};`}
 
   & .icon {
     margin: 0;

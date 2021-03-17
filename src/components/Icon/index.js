@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import SettingsIcon from "../../assets/icons/setting.svg";
-import HeartIcon from "../../assets/icons/heart.svg";
-import ArrowBackIcon from "../../assets/icons/arrowBack.svg";
+import SettingsIcon from "../../../assets/icons/setting.svg";
+import HeartIcon from "../../../assets/icons/heart.svg";
+import ArrowBackIcon from "../../../assets/icons/arrowBack.svg";
 /* Icon
  *
  * SVG icons wrapper

@@ -4,7 +4,7 @@ import Box from "../Box";
 import Icon from "../Icon";
 
 import Button from "./";
-import {colors as themeColors} from "../tokens.js"
+import * as themeColors from '../../tokens/colors';
 
 <Meta title="Button" />
 
@@ -76,19 +76,19 @@ Button component provides interfaces for all types of the buttons. Different typ
 <Canvas>
   <Story name="Sizes">
     <Box>
-      <Button color="#1b8ceb" textColor="#fff" size="0.60rem">
+      <Button color={themeColors.primaryOrange100} textColor="#fff" size="0.60rem">
         Tiny
       </Button>
-      <Button color="#00d1b2" textColor="#fff" size="0.785rem">
+      <Button color={themeColors.primaryPurple100} textColor="#fff" size="0.785rem">
         Small
       </Button>
-      <Button color="#e91e63" textColor="#fff" size="1rem">
+      <Button color={themeColors.secondaryPink100} textColor="#fff" size="1rem">
         Normal
       </Button>
-      <Button color="#888888" textColor="#fff" size="1.5rem">
+      <Button color={themeColors.secondaryGreen100} textColor="#fff" size="1.5rem">
         Large
       </Button>
-      <Button color="#000" textColor="#fff" size="2.0rem">
+      <Button color={themeColors.secondaryBlack100} textColor="#fff" size="2.0rem">
         XLarge
       </Button>
     </Box>

@@ -1,0 +1,45 @@
+
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import Icon from ".";
+import Box from "../Box"
+import * as themeColors from '../../tokens/colors';
+
+<Meta title="Icon" />
+
+## Icon
+
+SVG icons with customizable color and size, mainly to be used inside the buttons
+
+<Canvas>
+  <Story name="Default">
+  <Box>
+    <Icon name="heart"/>
+    <Icon name="settings"/>
+    <Icon name="arrowBack"/>
+  </Box>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Colored">
+  <Box>
+    <Icon name="heart" color={themeColors.primaryOrange100}/>
+    <Icon name="heart" color={themeColors.primaryPurple100}/>
+    <Icon name="heart" color={themeColors.secondaryYellow100}/>
+    <Icon name="heart" color={themeColors.secondaryGreen100}/>
+  </Box>
+  <Box>
+    <Icon name="settings" color={themeColors.primaryOrange100}/>
+    <Icon name="settings" color={themeColors.primaryPurple100}/>
+    <Icon name="settings" color={themeColors.secondaryYellow100}/>
+    <Icon name="settings" color={themeColors.secondaryGreen100}/>
+  </Box>
+  <Box>
+    <Icon name="arrowBack" color={themeColors.primaryOrange100}/>
+    <Icon name="arrowBack" color={themeColors.primaryPurple100}/>
+    <Icon name="arrowBack" color={themeColors.secondaryYellow100}/>
+    <Icon name="arrowBack" color={themeColors.secondaryGreen100}/>
+  </Box>
+  </Story>
+</Canvas>
