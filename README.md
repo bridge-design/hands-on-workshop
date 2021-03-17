@@ -43,6 +43,19 @@ npm run demo
 
 Edit sources in `demo` folder.
 
+## Design tokens
+
+To get started with imported tokens you need to place the imported file into `./tokens/` folder. Default filename expected is `design-tokens.json` (can be changed in config).
+
+To build your tokens, run 
+
+```
+npm run build-tokens
+```
+
+The built files will be placed to `src/tokens/` directory.
+
+Tokens are rebuilt automatically when you start demo page or storybook.
 
 # Build and publish documentation
 
