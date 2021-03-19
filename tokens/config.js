@@ -11,11 +11,11 @@ StyleDictionary.registerFilter({
 });
 
 module.exports = {
-  source: ["src/tokens/design-tokens.json"],
+  source: ["./design-tokens.json"],
   platforms: {
     js: {
       transformGroup: "js",
-      buildPath: "src/tokens/",
+      buildPath: "./dist/",
       transforms: ["size/px", "name/cti/camel"],
       /* We split tokens into separate files - it will be easier to use them this way */
       files: [

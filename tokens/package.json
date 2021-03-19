@@ -1,0 +1,11 @@
+{
+  "name": "tokens",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "style-dictionary build --config ./config.js"
+  },
+  "devDependencies": {
+    "style-dictionary": "^2.10.3"
+  }
+}
