@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "build": "style-dictionary build --config ./config.js"
+    "build": "mkdir -p dist && cpy index.js dist && style-dictionary build --config ./config.js"
   },
   "devDependencies": {
+    "cpy-cli": "^3.1.1",
     "style-dictionary": "^2.10.3"
   }
 }
