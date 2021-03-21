@@ -13,47 +13,37 @@ Button component provides interfaces for all types of the buttons. Different typ
 
 <Canvas>
   <Story name="Default">
-    <div>
-      <Box>
-        <Button
-          onClick={function () {
-            alert("You clicked!");
-          }}
-        >
-          I am just a button
-        </Button>
-      </Box>
-      <Box>
-        <Button href="http://varya.me">
-          I am a link button
-        </Button>
-        <Button textColor="#fff" disabled href="http://varya.me">
-          Disabled button with link
-        </Button>
-      </Box>
-    </div>
+    <Button
+      onClick={function () {
+        alert("You clicked!");
+      }}
+    >
+      I am just a button
+    </Button>
+    
+    <Button href="http://varya.me">
+      I am a link button
+    </Button>
+    <Button textColor="#fff" disabled href="http://varya.me">
+      Disabled button with link
+    </Button>
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="Style variants">
     <div>
-      <Box>
-        <Button>
-          Default
-        </Button>
-        <Button isRounded>
-         Rounded
-        </Button>
-        <Button isOutline>
-         Outline
-        </Button>
-      </Box>
-      <Box style={{width: "400px"}}>
-        <Button isStretched>
-          Full width Button
-        </Button>
-      </Box>
+      <Button>
+        Default
+      </Button>
+      <Button isOutline>
+        Outline
+      </Button>
+    </div>
+    <div style={{marginTop: "20px"}}>
+      <Button isStretched>
+        Full width Button
+      </Button>
     </div>
   </Story>
 </Canvas>
@@ -61,53 +51,47 @@ Button component provides interfaces for all types of the buttons. Different typ
 <Canvas>
   <Story name="Colors">
     <div>
-      <Box>
-        {Object.entries(themeColors).map(([colorName, color]) => (
-        <Button color={color} textColor={colorName !== "white" ? "#fff" : "#000"} style={{margin: "15px"}}>
-          {colorName}
-        </Button>
-        ))}
-      </Box>
+      {Object.entries(themeColors).map(([colorName, color]) => (
+      <Button color={color} textColor={colorName !== "white" ? "#fff" : "#000"} style={{margin: "15px"}}>
+        {colorName}
+      </Button>
+      ))}
     </div>
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="Sizes">
-    <Box>
-      <Button color={themeColors.primaryOrange100} textColor="#fff" size="0.60rem">
-        Tiny
-      </Button>
-      <Button color={themeColors.primaryPurple100} textColor="#fff" size="0.785rem">
-        Small
-      </Button>
-      <Button color={themeColors.secondaryPink100} textColor="#fff" size="1rem">
-        Normal
-      </Button>
-      <Button color={themeColors.secondaryGreen100} textColor="#fff" size="1.5rem">
-        Large
-      </Button>
-      <Button color={themeColors.secondaryBlack100} textColor="#fff" size="2.0rem">
-        XLarge
-      </Button>
-    </Box>
+    <Button color={themeColors.primaryOrange100} textColor="#fff" size="0.60rem">
+      Tiny
+    </Button>
+    <Button color={themeColors.primaryPurple100} textColor="#fff" size="0.785rem">
+      Small
+    </Button>
+    <Button color={themeColors.secondaryPink100} textColor="#fff" size="1rem">
+      Normal
+    </Button>
+    <Button color={themeColors.secondaryGreen100} textColor="#fff" size="1.5rem">
+      Large
+    </Button>
+    <Button color={themeColors.secondaryBlack100} textColor="#fff" size="2.0rem">
+      XLarge
+    </Button>
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="Icon button">
     <div>
-      <Box>
-        <Button isIcon>
-          <Icon name="heart" />
-        </Button>
-        <Button isIcon>
-          <Icon name="arrowBack" />
-        </Button>
-        <Button isIcon>
-          <Icon name="settings" />
-        </Button>
-      </Box>
+      <Button isIcon>
+        <Icon name="heart" />
+      </Button>
+      <Button isIcon>
+        <Icon name="arrowBack" />
+      </Button>
+      <Button isIcon>
+        <Icon name="settings" />
+      </Button>
     </div>
   </Story>
 </Canvas>
