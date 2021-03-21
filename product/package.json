@@ -1,8 +1,8 @@
 {
-  "name": "demo",
+  "name": "product",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack serve --config webpack.demo.config.js --mode=development --content-base build --history-api-fallback",
+    "start": "webpack serve --config webpack.product.config.js --mode=development --content-base build --history-api-fallback",
     "build": "webpack mode=production"
   },
   "devDependencies": {

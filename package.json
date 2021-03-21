@@ -7,7 +7,7 @@
   "workspaces": [
     "tokens",
     "design-system",
-    "demo"
+    "product"
   ],
   "scripts": {
     "build:tokens": "yarn workspace tokens build",
@@ -17,17 +17,17 @@
     "build:design-system": "yarn workspace design-system build",
     "build:storybook": "yarn workspace design-system build:storybook",
     "deploy:storybook": "yarn workspace design-system deploy:storybook",
-    "demo": "yarn workspace demo start",
-    "build:demo": "yarn workspace demo build",
-    "build": "yarn build:demo",
+    "product": "yarn workspace product start",
+    "build:product": "yarn workspace product build",
+    "build": "yarn build:product",
     "creevey": "yarn creevey --ui",
     "lint": "eslint ./ --ext .jsx --ext .js"
   },
   "eslintIgnore": [
-    "demo",
+    "product",
     "design-system",
     "webpack.config.js",
-    "webpack.demo.config.js"
+    "webpack.product.config.js"
   ],
   "repository": {
     "type": "git",

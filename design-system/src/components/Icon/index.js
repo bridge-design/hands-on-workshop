@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import SettingsIcon from "./svg/setting.svg";
-console.log("🚀 ~ file: index.js ~ line 5 ~ SettingsIcon", SettingsIcon);
 import HeartIcon from "./svg/heart.svg";
 import ArrowBackIcon from "./svg/arrowBack.svg";
 /* Icon

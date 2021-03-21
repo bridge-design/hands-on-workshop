@@ -10,7 +10,7 @@ The project is split into 3 independent [Yarn workspaces](https://classic.yarnpk
 
 ### Tokens
 
-A workspace for processing Figma tokens. It uses [style-dictionary](https://github.com/amzn/style-dictionary) to transform exported JSON into JS object with mre convenient shape.
+A workspace for processing Figma tokens. It uses [style-dictionary](https://github.com/amzn/style-dictionary) to transform exported JSON into JS object of a convenient shape.
 
 ```
 tokens/
@@ -27,19 +27,19 @@ Place `design-tokens.json`(a file exported from Figma) in the root of `tokens` f
 
 *Important.* You are not supposed to remove `dist/` folder; it contains `index.js` file which will be needed for reexporting variables.
 
-There is a predefined config for style-dictionary in `config.js`, which works nicely with current setup. If you want to change the shape of your tokens, please refer to [style-dictionary dovumentation](https://amzn.github.io/style-dictionary/#/README).
+Inside a `config.js` you already got a tailor-made style-dictionary config, which works nicely with current setup. If you want to change the shape of your tokens, please refer to [style-dictionary documentation](https://amzn.github.io/style-dictionary/#/README).
 
 __Scripts:__ 
 
 - `yarn build:tokens` - builds token files. Run it every time when you reexport files from Figma.
 
-### Lib
+### Design system
 
 A workspace for developing your components library.
 
 Folder structure: 
 ```
-lib/
+design-system/
 ┣ .add-component/ 
 ┣ .storybook/
 ┣ assets/
@@ -63,17 +63,17 @@ __Scripts:__
 
 - `yarn start` - starts storybook development server at localhost:6006
 - `yarn add-component <ComponentName>` - adds template files for new component
-- `yarn build:lib` - builds components library.
-- `yarn build:storybook` - builds storybook.
-- `yarn deploy:storybook` - deploy storybook to github pages.
+- `yarn build:design-system` - builds components library and storybook.
 - `yarn test`
 
-### Demo
+TODO: build lib and stb together
+
+### Product
 
 In this workspace for building a demo app using the components library you created.
 
 ```
-demo/
+product/
 ┣ build/
 ┃ ┗ index.html
 ┣ src/
@@ -82,11 +82,11 @@ demo/
 ┃ ┣ details.js
 ┣ .babelrc
 ┣ package.json
-┗ webpack.demo.config.js
+┗ webpack.product.config.js
 ```
 
 Add new pages into `src/` folder. 
 
 __Scripts:__ 
-- `yarn demo` - starts development server at localhost:8080
-- `yarn build:demo` or just `yaarn build` - starts development server at localhost:8080
+- `yarn product` - starts development server at localhost:8080
+- `yarn build:product` or just `yaarn build` - starts development server at localhost:8080
