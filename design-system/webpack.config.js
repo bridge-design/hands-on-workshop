@@ -2,7 +2,6 @@
 
 const webpack = require("webpack");
 const nodeExternals = require("webpack-node-externals");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 const paths = {
@@ -18,7 +17,7 @@ module.exports = (_, argv) => {
   process.env.BABEL_ENV = env;
   process.env.NODE_ENV = env;
 
-  let libraryName = "lib";
+  let libraryName = "design-system";
   let plugins = [
     new webpack.DefinePlugin({
       "process.env": {
@@ -26,8 +25,6 @@ module.exports = (_, argv) => {
       },
     }),
     new webpack.NamedModulesPlugin(),
-    // new webpack.optimize.UglifyJsPlugin({ minimize: true }),
-    new CopyWebpackPlugin([{ from: "assets", to: "assets" }]),
   ];
 
   return {

@@ -6,27 +6,26 @@
   "private": true,
   "workspaces": [
     "tokens",
-    "lib",
+    "design-system",
     "demo"
   ],
   "scripts": {
     "build:tokens": "yarn workspace tokens build",
-    "start": "yarn workspace lib start",
-    "add-component": "yarn workspace lib add-component",
-    "test": "yarn workspace lib test",
-    "build:lib": "yarn workspace lib build",
-    "build:storybook": "yarn workspace lib build:storybook",
-    "deploy:storybook": "yarn workspace lib deploy:storybook",
+    "start": "yarn workspace design-system start",
+    "add-component": "yarn workspace design-system add-component",
+    "test": "yarn workspace design-system test",
+    "build:design-system": "yarn workspace design-system build",
+    "build:storybook": "yarn workspace design-system build:storybook",
+    "deploy:storybook": "yarn workspace design-system deploy:storybook",
     "demo": "yarn workspace demo start",
     "build:demo": "yarn workspace demo build",
     "build": "yarn build:demo",
     "creevey": "yarn creevey --ui",
-    "test": "run-p start creevey",
     "lint": "eslint ./ --ext .jsx --ext .js"
   },
   "eslintIgnore": [
     "demo",
-    "lib",
+    "design-system",
     "webpack.config.js",
     "webpack.demo.config.js"
   ],
@@ -46,7 +45,7 @@
     "globals": [],
     "ignore": [
       "node_modules/**",
-      "lib/**"
+      "design-system/**"
     ],
     "parser": "babel-eslint"
   },

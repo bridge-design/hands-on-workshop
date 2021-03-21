@@ -1,12 +1,11 @@
 {
-  "name": "lib",
+  "name": "design-system",
   "version": "1.0.0",
-  "main": "dist/lib.js",
+  "main": "dist/design-system.js",
   "scripts": {
     "start": "start-storybook -p 6006",
     "build": "webpack --mode=production",
     "build:storybook": "build-storybook",
-    "deploy:storybook": "storybook-to-ghpages",
     "test": "yarn creevey --ui",
     "add-component": "node .add-component/index.js"
   },

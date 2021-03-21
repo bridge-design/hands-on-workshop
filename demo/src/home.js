@@ -6,7 +6,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 console.log("🚀 ~ file: home.js ~ line 7 ~ styled", styled);
 // TODO: load components from built library
-import * as lib from "lib";
+import * as designSystem from "design-system";
 console.log("🚀 ~ file: home.js ~ line 10 ~ lib", lib);
 import avatarImg from "../assets/images/avatar.png";
 
