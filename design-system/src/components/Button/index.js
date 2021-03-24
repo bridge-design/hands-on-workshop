@@ -31,11 +31,12 @@ const StyledButton = styled.button`
   font-weight: 700;
   width: ${(p) => (p.isStretched ? "100%" : null)};
   ${(p) =>
-    (p.isOutline || p.isIcon) &&
-    `
-   background-color: ${(p) => (p.color ? p.color : "transparent")};
+    p.isOutline || p.isIcon
+      ? `
+   background-color: ${p.color ? p.color : "transparent"};
    border-color: ${colors.secondaryBlack20};
-   color: ${colors.secondaryBlack100};`}
+   color: ${colors.secondaryBlack100};`
+      : ""}
 
   & .icon {
     margin: 0;

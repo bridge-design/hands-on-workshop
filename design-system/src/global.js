@@ -1,6 +1,5 @@
 import { createGlobalStyle, css } from "styled-components";
 import { typography as t } from "tokens";
-console.log("🚀 ~ file: global.js ~ line 3 ~ t", t.paragraph3FontFamily);
 const paragraph3FontFamily = t.paragraph3FontFamily;
 const bodyStyles = css`
   overflow-y: auto;
@@ -87,14 +86,12 @@ const bodyStyles = css`
 // where they load the fon${t.
 export const fontUrl =
   "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap";
-console.log("🚀 ~ file: global.js ~ line 6 ~ bodyStyles", bodyStyles);
 
 const globalStyle = createGlobalStyle`
   body {
     ${bodyStyles}
   }
   // prevent mouse-clicks from focusing elements
-  // this removes the ugly blue outline
   :focus:not(:focus-visible) {
     outline: none;
   }

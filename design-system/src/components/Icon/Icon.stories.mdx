@@ -11,10 +11,17 @@ SVG icons with customizable color and size, mainly to be used inside the buttons
 
 <Canvas>
   <Story name="Default">
-    <Icon name="heart" />
-    <Icon name="settings" />
-    <Icon name="arrowBack" />
-    <Icon name="menu" />
+    {[
+      "heart",
+      "arrowBack",
+      "settings",
+      "menu",
+      "viewGrid",
+      "viewItem",
+      "filter",
+    ].map((icon) => (
+      <Icon key={icon} name={icon} style={{padding: "1em"}} />
+    ))}
   </Story>
 </Canvas>
 
@@ -29,8 +36,21 @@ SVG icons with customizable color and size, mainly to be used inside the buttons
       ].map((color) => {
         return (
           <div key={color} style={{ width: "100%" }}>
-            {["heart", "arrowBack", "settings", "menu", "viewGrid", "viewItem", "filter"].map((icon) => (
-              <Icon key={icon} name={icon} color={color} />
+            {[
+              "heart",
+              "arrowBack",
+              "settings",
+              "menu",
+              "viewGrid",
+              "viewItem",
+              "filter",
+            ].map((icon) => (
+              <Icon
+                key={icon}
+                name={icon}
+                color={color}
+                style={{padding: "1em"}} 
+              />
             ))}
           </div>
         );
