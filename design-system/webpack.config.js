@@ -55,24 +55,41 @@ module.exports = (_, argv) => {
         //   use: ["eslint-loader"],
         // },
         {
-          test: /\.(jpe?g|png|gif|svg)$/i,
+          test: /\.(jpe?g|png|gif)$/i,
           use: ["url-loader?limit=10000", "img-loader"],
         },
-        // {
-        //   test: /\.svg$/,
+        {
+          test: /\.svg$/,
 
-        //   issuer: {
-        //     test: /\.(js|ts)x?$/,
-        //   },
-        //   use: ["@svgr/webpack", "file-loader"],
-        // },
+          issuer: {
+            test: /\.(js|ts)x?$/,
+          },
+          use: [
+            {
+              loader: "@svgr/webpack",
+              options: {
+                svgoConfig: {
+                  plugins: {
+                    removeViewBox: false,
+                  },
+                },
+              },
+            },
+            "file-loader",
+          ],
+        },
       ],
     },
     resolve: {
       modules: [paths.libModules, paths.libSrc],
       extensions: [".json", ".js", ".jsx"],
     },
-    externals: [nodeExternals()],
+    externals: [
+      nodeExternals(),
+      nodeExternals({
+        modulesDir: path.resolve(__dirname, "../node_modules"),
+      }),
+    ],
     plugins: plugins,
     node: {
       fs: "empty",

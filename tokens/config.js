@@ -1,5 +1,18 @@
 const StyleDictionary = require("style-dictionary");
 
+StyleDictionary.registerTransform({
+  name: "size/px", // notice: the name is an override of an existing predefined method (yes, you can do it)
+  type: "value",
+  matcher: function (prop) {
+    /* supports both "pixel" and "pixels" */
+
+    return prop?.original?.unit?.startsWith("pixel");
+  },
+  transformer: function (prop) {
+    return `${prop.value}px`;
+  },
+});
+
 /* Basic filter to separate typography tokens. It might need tweaking depending on the token data shape */
 StyleDictionary.registerFilter({
   name: "isTypography",

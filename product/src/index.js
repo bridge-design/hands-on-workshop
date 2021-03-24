@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-console.log("🚀 ~ file: index.js ~ line 8 ~ Router", Router);
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import styled from "styled-components";
 /*
  * Each page has its own file in the "product" folder. By default, it is the Home
  * page. The code for it is in the home.js file.
  */
-import Home from "./home";
-import Details from "./details";
+import Home from "./pages/home";
+import Details from "./pages/details";
+import Cart from "./pages/cart";
+import Checkout from "./pages/checkout";
+import { GlobalStyle } from "design-system";
 
 const StyledContainer = styled.div`
   width: 375px;
@@ -22,10 +24,13 @@ const StyledContainer = styled.div`
 const App = () => (
   <Router>
     <StyledContainer>
+      <GlobalStyle />
       <Route exact path="/" component={Home} />
-      {/* <Route path="/details" component={Details} /> */}
+      <Route path="/details" component={Details} />
+      <Route path="/checkout" component={Checkout} />
+      <Route path="/cart" component={Cart} />
     </StyledContainer>
   </Router>
 );
 
-ReactDOM.render(<App />, document.getElementById("react-root"));
+ReactDOM.render(<App />, document.getElementById("root"));
