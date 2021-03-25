@@ -1,8 +1,7 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
 
-import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
-
-import  Icon from ".";
-import { colors as themeColors } from 'tokens';
+import Icon from ".";
+import { colors as themeColors } from "tokens";
 
 <Meta title="Icon" />
 
@@ -12,25 +11,50 @@ SVG icons with customizable color and size, mainly to be used inside the buttons
 
 <Canvas>
   <Story name="Default">
-    <Icon name="heart"/>
-    <Icon name="settings"/>
-    <Icon name="arrowBack"/>
+    {[
+      "heart",
+      "arrowBack",
+      "settings",
+      "menu",
+      "viewGrid",
+      "viewItem",
+      "filter",
+    ].map((icon) => (
+      <Icon key={icon} name={icon} style={{padding: "1em"}} />
+    ))}
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="Colored">
-    <Icon name="heart" color={themeColors.primaryOrange100}/>
-    <Icon name="heart" color={themeColors.primaryPurple100}/>
-    <Icon name="heart" color={themeColors.secondaryYellow100}/>
-    <Icon name="heart" color={themeColors.secondaryGreen100}/>
-    <Icon name="settings" color={themeColors.primaryOrange100}/>
-    <Icon name="settings" color={themeColors.primaryPurple100}/>
-    <Icon name="settings" color={themeColors.secondaryYellow100}/>
-    <Icon name="settings" color={themeColors.secondaryGreen100}/>
-    <Icon name="arrowBack" color={themeColors.primaryOrange100}/>
-    <Icon name="arrowBack" color={themeColors.primaryPurple100}/>
-    <Icon name="arrowBack" color={themeColors.secondaryYellow100}/>
-    <Icon name="arrowBack" color={themeColors.secondaryGreen100}/>
+    <div>
+      {[
+        themeColors.primaryOrange100,
+        themeColors.primaryPurple100,
+        themeColors.secondaryYellow100,
+        themeColors.secondaryGreen100,
+      ].map((color) => {
+        return (
+          <div key={color} style={{ width: "100%" }}>
+            {[
+              "heart",
+              "arrowBack",
+              "settings",
+              "menu",
+              "viewGrid",
+              "viewItem",
+              "filter",
+            ].map((icon) => (
+              <Icon
+                key={icon}
+                name={icon}
+                color={color}
+                style={{padding: "1em"}} 
+              />
+            ))}
+          </div>
+        );
+      })}
+    </div>
   </Story>
 </Canvas>

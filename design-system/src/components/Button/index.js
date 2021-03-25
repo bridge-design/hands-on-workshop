@@ -10,10 +10,6 @@ import { colors } from "tokens";
 import { string } from "prop-types";
 
 const StyledButton = styled.button`
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-weight: 400;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -32,21 +28,19 @@ const StyledButton = styled.button`
   opacity: ${(p) => (p.disabled ? 0.6 : 1)};
   color: ${(p) => (p.textColor ? p.textColor : colors.secondaryWhite100)};
   font-size: ${(p) => (p.size ? p.size : "14px")};
+  font-weight: 700;
   width: ${(p) => (p.isStretched ? "100%" : null)};
   ${(p) =>
-    (p.isOutline || p.isIcon) &&
-    `
-   background-color: transparent;
+    p.isOutline || p.isIcon
+      ? `
+   background-color: ${p.color ? p.color : "transparent"};
    border-color: ${colors.secondaryBlack20};
-   color: ${colors.secondaryBlack100};`}
+   color: ${colors.secondaryBlack100};`
+      : ""}
 
   & .icon {
     margin: 0;
     font-size: ${(p) => (p.size ? p.size : "1rem")};
-  }
-
-  &:not(:last-child) {
-    margin: 0 0.25em 0 0;
   }
 `;
 
