@@ -6,7 +6,12 @@ StyleDictionary.registerTransform({
   matcher: function (prop) {
     /* supports both "pixel" and "pixels" */
 
-    return prop?.original?.unit?.startsWith("pixel");
+    return (
+      prop &&
+      prop.original &&
+      prop.original.unit &&
+      prop.original.unit.startsWith("pixel")
+    );
   },
   transformer: function (prop) {
     return `${prop.value}px`;
