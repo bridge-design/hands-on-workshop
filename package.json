@@ -1,24 +1,33 @@
 {
-  "name": "hands-on-workshop-boilerplate",
-  "version": "0.1.0",
-  "description": "A starter repository for Handson with Design systems workshop",
+  "name": "hands-on-workshop",
+  "version": "0.2.0",
+  "description": "A starter repository for Hands-on with Design systems workshop",
   "main": "https://github.com/bridge-design/hands-on-workshop#readme",
+  "private": true,
+  "workspaces": [
+    "tokens",
+    "design-system",
+    "product"
+  ],
   "scripts": {
-    "build": "npm run build-tokens && webpack --env production",
-    "lint": "eslint ./ --ext .jsx --ext .js",
-    "start": "npm run build-tokens && start-storybook -p 6006",
-    "build-storybook": "npm run build-tokens && build-storybook",
-    "deploy-storybook": "storybook-to-ghpages",
-    "build-tokens": "style-dictionary build --config ./tokens/config.js",
-    "demo": "npm run build-tokens && webpack serve --config webpack.demo.config.js --mode=development --content-base build --history-api-fallback",
-    "flow": "flow",
-    "create-component": "node .add-component/index.js"
+    "build:tokens": "yarn workspace tokens build",
+    "start": "yarn workspace design-system start",
+    "add-component": "yarn workspace design-system add-component",
+    "test": "yarn workspace design-system test",
+    "build:design-system": "yarn workspace design-system build",
+    "build:storybook": "yarn workspace design-system build:storybook",
+    "deploy:storybook": "yarn workspace design-system deploy:storybook",
+    "product": "yarn workspace product start",
+    "build:product": "yarn workspace product build",
+    "build": "yarn build:product",
+    "creevey": "yarn creevey --ui",
+    "lint": "eslint ./ --ext .jsx --ext .js"
   },
   "eslintIgnore": [
-    "demo",
-    "lib",
+    "product",
+    "design-system",
     "webpack.config.js",
-    "webpack.demo.config.js"
+    "webpack.product.config.js"
   ],
   "repository": {
     "type": "git",
@@ -36,55 +45,13 @@
     "globals": [],
     "ignore": [
       "node_modules/**",
-      "lib/**"
+      "design-system/**"
     ],
     "parser": "babel-eslint"
   },
   "author": "Varya Stepanova <mail@varya.me>",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@babel/preset-env": "^7.13.9",
-    "@babel/preset-react": "^7.12.13",
-    "@babel/runtime-corejs3": "^7.13.9",
-    "@storybook/addon-console": "^1.2.3",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addons": "^6.1.21",
-    "@storybook/react": "6.1.21",
-    "@storybook/storybook-deployer": "^2.8.7",
-    "@svgr/webpack": "^5.5.0",
-    "babel-eslint": "7.2.3",
-    "babel-loader": "^8.2.2",
-    "babel-plugin-module-resolver": "^4.1.0",
-    "babel-plugin-styled-components": "^1.12.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "copy-webpack-plugin": "^4.6.0",
-    "core-js": "^3.9.1",
-    "creevey": "^0.7.23",
-    "css-loader": "^0.28.11",
-    "eslint": "^4.19.1",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-react": "^7.22.0",
-    "file-loader": "^1.1.11",
-    "img-loader": "^2.0.1",
-    "prettier": "^2.2.1",
-    "style-dictionary": "^2.10.3",
-    "url-loader": "^0.6.2",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2",
-    "webpack-node-externals": "^1.7.2",
-    "yargs": "^8.0.2"
-  },
-  "dependencies": {
-    "color": "^3.1.3",
-    "html-webpack-plugin": "^5.2.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-is": "^16.13.1",
-    "react-router-dom": "^4.3.1",
-    "styled-components": "^5.2.1",
-    "styled-utils": "^1.2.4"
+    "npm-run-all": "^4.1.5"
   }
 }

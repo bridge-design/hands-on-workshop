@@ -1,0 +1,48 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "main": "dist/design-system.js",
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build": "webpack --mode=production",
+    "build:storybook": "build-storybook",
+    "test": "yarn creevey --ui",
+    "add-component": "node .add-component/index.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "@storybook/addon-console": "^1.2.3",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addons": "^6.1.21",
+    "@storybook/react": "6.1.21",
+    "@storybook/storybook-deployer": "^2.8.7",
+    "@svgr/webpack": "^5.5.0",
+    "babel-eslint": "7.2.3",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-styled-components": "^1.12.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "creevey": "^0.7.23",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-react": "^7.22.0",
+    "file-loader": "^1.1.11",
+    "img-loader": "^2.0.1",
+    "prettier": "^2.2.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "core-js": "^3.9.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "styled-components": "^5.2.1",
+    "tokens": "1.0.0"
+  }
+}
