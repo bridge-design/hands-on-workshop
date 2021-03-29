@@ -1,6 +1,6 @@
 {
   "name": "hands-on-workshop",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A starter repository for Hands-on with Design systems workshop",
   "main": "https://github.com/bridge-design/hands-on-workshop#readme",
   "private": true,
@@ -21,7 +21,8 @@
     "build:product": "yarn workspace product build",
     "build": "yarn build:product",
     "creevey": "yarn creevey --ui",
-    "lint": "eslint ./ --ext .jsx --ext .js"
+    "lint": "eslint ./ --ext .jsx --ext .js",
+    "version:design-system": "yarn workspace design-system version"
   },
   "eslintIgnore": [
     "product",
