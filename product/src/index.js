@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+// We will use HashRouter instead of BrowserRouter fto simplify the deploy to Github Pages
+import { HashRouter as Router, Route } from "react-router-dom";
 import styled from "styled-components";
 /*
  * Each page has its own file in the "product" folder. By default, it is the Home
