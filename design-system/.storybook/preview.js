@@ -10,6 +10,16 @@ const withGlobalStyle = (storyFn) => (
 
 export const decorators = [withGlobalStyle];
 
+export const parameters = {
+  options: {
+    storySort: {
+      order: ["Intro", "Typography", "Color Palette", "Components"],
+    },
+  },
+  actions: { disabled: true },
+  controls: { disabled: true },
+};
+
 // Load the font and avoid re-loading it when components change
 const fontLinkId = "storybook-font-link-tag";
 
