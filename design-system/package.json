@@ -1,6 +1,6 @@
 {
   "name": "design-system",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "main": "dist/design-system.js",
   "scripts": {
     "start": "start-storybook -p 6006",
@@ -8,7 +8,7 @@
     "build:storybook": "build-storybook",
     "test": "yarn creevey --ui",
     "add-component": "node .add-component/index.js",
-    "version": "yarn version"
+    "version": "npm version"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
