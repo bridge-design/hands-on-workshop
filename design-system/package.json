@@ -1,6 +1,6 @@
 {
   "name": "design-system",
-  "version": "0.5.0",
+  "version": "0.1.0",
   "main": "dist/design-system.js",
   "scripts": {
     "start": "start-storybook -p 6006",
