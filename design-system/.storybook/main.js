@@ -5,9 +5,6 @@ module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.js"],
   addons: ["@storybook/addon-essentials", "creevey", "storybook-addon-designs"],
   webpackFinal: async (config) => {
-    // use installed babel-loader which is v8.0-beta (which is meant to work with @babel/core@7)
-    config.module.rules[0].use[0].loader = require.resolve("babel-loader");
-
     // use @babel/preset-react for JSX and env (instead of staged presets)
     config.module.rules[0].use[0].options.presets = [
       require.resolve("@babel/preset-react"),
