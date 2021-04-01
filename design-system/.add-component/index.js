@@ -1,4 +1,4 @@
-// @source: https://levelup.gitconnected.com/how-to-generate-react-components-from-your-terminal-a27741a5b862
+// @see: https://levelup.gitconnected.com/how-to-generate-react-components-from-your-terminal-a27741a5b862
 const fs = require("fs");
 const path = require("path");
 const component = require("./react-template.js");
@@ -8,8 +8,7 @@ const story = require("./storybook-template.js");
 const [name] = process.argv.slice(2);
 if (!name) throw new Error("You must include a component name.");
 
-// folder prefix to be removed
-const dir = path.resolve(`./src/${name}/`);
+const dir = path.resolve(`./src/components/${name}/`);
 
 // throw an error if the file already exists
 if (fs.existsSync(dir))

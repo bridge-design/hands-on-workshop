@@ -4,6 +4,7 @@
   "description": "A starter repository for Hands-on with Design systems workshop",
   "main": "https://github.com/bridge-design/hands-on-workshop#readme",
   "private": true,
+  "license": "MIT",
   "workspaces": [
     "tokens",
     "design-system",
