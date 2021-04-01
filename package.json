@@ -19,12 +19,13 @@
     "test:approve": "yarn workspace design-system loki approve",
     "build:design-system": "yarn workspace design-system build",
     "build:storybook": "yarn workspace design-system build:storybook",
-    "deploy:storybook": "yarn workspace design-system deploy:storybook",
     "product": "yarn workspace product start",
     "build:product": "yarn workspace product build",
-    "build": "yarn build:product",
+    "build": "yarn build:tokens && yarn build:design-system && yarn build:product",
     "lint": "eslint ./ --ext .jsx --ext .js",
-    "version:design-system": "yarn workspace design-system version"
+    "version:design-system": "yarn workspace design-system version",
+    "release": "yarn build && yarn version:design-system",
+    "postrelease": "git push && git push --tags"
   },
   "eslintIgnore": [
     "product",

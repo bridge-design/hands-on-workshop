@@ -1,4 +1,5 @@
-name: Product
+# This orkflow will deploy a product every time changes are pushed into main branch
+name: Product changes
 on:
   push:
     branches:
@@ -19,34 +20,20 @@ jobs:
         with:
           node-version: "12.18.2"
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
       - name: Cache dependencies
         uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
           
       - name: Install dependencies
         run: |
           yarn install --frozen-lockfile
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
 
-      - name: Build design tokens
+      - name: Build everything
         run: |
-          yarn workspace tokens build
-          
-      - name: Build components library
-        run: |
-          yarn workspace design-system build
-          
-      - name: Build product
-        run: |
-          yarn workspace product build
+          yarn build
           
       - name: Deploy product
         uses: JamesIves/github-pages-deploy-action@4.1.0
