@@ -1,15 +1,32 @@
-name: Storybook
+# This wqorkflow will be triggered every time when new version of library released
+name: Library release
 on:
   push:
     branches:
       - 'main'
-    paths:
-      - 'design-system/src/**'
 
 jobs:
-  build-and-deploy:
+  version-check:
     runs-on: ubuntu-latest
-
+    outputs:
+      changed: ${{ steps.version-check.outputs.changed }}
+      version: ${{ steps.version-check.outputs.version }}
+      commit: ${{ steps.version-check.outputs.commit }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - id: version-check
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-name: design-system/package.json
+          
+  build-and-deploy:
+    needs: version-check
+    runs-on: ubuntu-latest
+    if: needs.version-check.outputs.changed == 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -35,19 +52,13 @@ jobs:
       - name: Install dependencies
         run: |
           yarn install --frozen-lockfile
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
 
-      - name: Build design tokens
+      - name: Build everything
         run: |
-          yarn workspace tokens build
+          yarn build
           
-      - name: Build Storybook
-        run: |
-          yarn workspace design-system build:storybook
-          
-      - name: Deploy Storybook
+      - name: Deploy product
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          folder: ./design-system/storybook-static
+          folder: ./product/build
           branch: gh-pages
-          target-folder: storybook
