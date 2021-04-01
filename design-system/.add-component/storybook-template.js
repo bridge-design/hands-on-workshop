@@ -3,7 +3,7 @@ import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
 
 import ${name} from ".";
 
-<Meta title="${name}" />
+<Meta title="Components/${name}" />
 
 ## ${name}
 

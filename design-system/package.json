@@ -33,6 +33,7 @@
     "eslint-plugin-react": "^7.22.0",
     "file-loader": "^1.1.11",
     "img-loader": "^2.0.1",
+    "loki": "^0.28.1",
     "prettier": "^2.2.1",
     "storybook-addon-designs": "^5.4.5",
     "url-loader": "^0.6.2",
@@ -46,5 +47,20 @@
     "react-dom": "^16.14.0",
     "styled-components": "^5.2.1",
     "tokens": "1.0.0"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }
