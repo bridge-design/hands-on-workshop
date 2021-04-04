@@ -23,8 +23,8 @@
     "product": "yarn workspace product start",
     "build:product": "yarn workspace product build",
     "build": "yarn build:tokens && yarn build:design-system && yarn build:product",
-    "version:design-system": "yarn workspace design-system version --no-git-tag-version",
-    "version:product": "yarn workspace product version --no-git-tag-version"
+    "version:design-system": "yarn workspace design-system version",
+    "version:product": "yarn workspace product version"
   },
   "eslintIgnore": [
     "product",
