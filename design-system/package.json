@@ -7,7 +7,7 @@
     "build": "webpack --mode=production",
     "build:storybook": "build-storybook",
     "test": "yarn creevey --ui",
-    "add-component": "node .add-component/index.js",
+    "add-component": "node .add-component/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
