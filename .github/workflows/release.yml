@@ -21,7 +21,7 @@ jobs:
         uses: EndBug/version-check@v1
         with:
           diff-search: true
-          file-name: design-system/package.json
+          file-name: product/package.json
           
   build-and-deploy:
     needs: version-check

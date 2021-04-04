@@ -8,7 +8,6 @@
     "build:storybook": "build-storybook",
     "test": "yarn creevey --ui",
     "add-component": "node .add-component/index.js",
-    "version": "npm version"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",

@@ -23,10 +23,8 @@
     "product": "yarn workspace product start",
     "build:product": "yarn workspace product build",
     "build": "yarn build:tokens && yarn build:design-system && yarn build:product",
-    "lint": "eslint ./ --ext .jsx --ext .js",
-    "version:design-system": "yarn workspace design-system version",
-    "release": "yarn build && yarn version:design-system",
-    "postrelease": "git push && git push --tags"
+    "version:design-system": "yarn workspace design-system version --no-git-tag-version",
+    "version:product": "yarn workspace product version --no-git-tag-version"
   },
   "eslintIgnore": [
     "product",
