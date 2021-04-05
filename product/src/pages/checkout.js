@@ -9,38 +9,41 @@ import { Button, Icon } from "design-system";
 import cardImg from "../assets/Card.svg";
 
 const StyledDiv1 = styled.div`
-  padding: 60px 40px 24px 40px;
+  padding: 64px 40px 40px 40px;
   background-color: rgba(254, 237, 233, 1);
 `;
 
 const StyledDiv2 = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 56px;
+  margin-bottom: 36px;
 `;
 const StyledDiv3 = styled.div`
   flex-grow: 2;
   display: flex;
   justify-content: start;
-  padding: 0 16px;
+  padding: 0 24px;
   align-items: center;
 `;
 
 const Styledh2 = styled.h2`
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 `;
 
 const StyledUl = styled.ul`
   padding: 0;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   width: 100%;
+  margin: 0;
+  height: 36px;
+  align-items: flex-end;
 `;
 const StyledLi = styled.li`
   list-style: none;
   width: 8px;
   height: 8px;
-  margin: 4px;
+  margin: 0 4px;
   background-color: #040415;
   opacity: 0.6;
   border-radius: 50%;
@@ -53,6 +56,7 @@ const StyledDiv5 = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
+  align-items: baseline;
 `;
 
 const StyledLink = styled.a`
@@ -64,21 +68,23 @@ const StyledBorder = styled.div`
   width: 100%;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+  margin-top: 8px;
+  margin-bottom: 32px;
 `;
 const StyledButton = styled(Button)`
   width: 138px;
   height: 40px;
   display: flex;
   justify-content: space-between;
-  border-radius: 12px;
+  padding: 8px 16px;
 `;
 
 const StyledDiv6 = styled.div`
   display: flex;
   justify-content: space-between;
-
-  margin: 32px 0;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
 `;
 
 const Checkout = () => {
@@ -123,7 +129,7 @@ const Checkout = () => {
         <p>Tarja A Grönholm</p>
         <StyledDiv6>
           <StyledButton isOutline color="transparent">
-            DHL Express <Icon name="chevronDown" width="10" />
+            DHL Express <Icon name="chevronDown" width="8" />
           </StyledButton>
           <p>€00.00</p>
         </StyledDiv6>
