@@ -44,6 +44,7 @@ const bodyStyles = css`
     line-height: ${t.headline1LineHeight};
     font-weight: ${t.headline1FontWeight};
     font-style: ${t.headline1FontStyle};
+    letter-spacing: ${t.headline1LetterSpacing};
   }
   h2 {
     font-family: ${t.headline2FontFamily};
@@ -51,6 +52,7 @@ const bodyStyles = css`
     font-weight: ${t.headline2FontWeight};
     font-style: ${t.headline2FontStyle};
     line-height: ${t.headline2LineHeight};
+    letter-spacing: ${t.headline2LetterSpacing};
   }
   h3 {
     font-family: ${t.headline3FontFamily};
@@ -58,6 +60,7 @@ const bodyStyles = css`
     font-weight: ${t.headline3FontWeight};
     font-style: ${t.headline3FontStyle};
     line-height: ${t.headline3LineHeight};
+    letter-spacing: ${t.headline3LetterSpacing};
   }
   h4 {
     font-family: ${t.headline4FontFamily};
@@ -65,6 +68,7 @@ const bodyStyles = css`
     font-weight: ${t.headline4FontWeight};
     font-style: ${t.headline4FontStyle};
     line-height: ${t.headline4LineHeight};
+    letter-spacing: ${t.headline4LetterSpacing};
   }
   h5 {
     font-family: ${t.headline5FontFamily};
@@ -72,6 +76,7 @@ const bodyStyles = css`
     font-weight: ${t.headline5FontWeight};
     font-style: ${t.headline5FontStyle};
     line-height: ${t.headline5LineHeight};
+    letter-spacing: ${t.headline5LetterSpacing};
   }
   h6 {
     font-family: ${t.headline6FontFamily};
@@ -79,6 +84,7 @@ const bodyStyles = css`
     font-weight: ${t.headline6FontWeight};
     font-style: ${t.headline6FontStyle};
     line-height: ${t.headline6LineHeight};
+    letter-spacing: ${t.headline6LetterSpacing};
   }
 `;
 
