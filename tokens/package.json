@@ -2,6 +2,7 @@
   "name": "tokens",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "license": "MIT",
   "scripts": {
     "build": "mkdirp dist && cpy index.js dist && style-dictionary build --config ./config.js"
   },
