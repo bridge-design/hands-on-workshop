@@ -1,6 +1,6 @@
-import { Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
+import { ArgsTable, Meta, Preview, Story } from "@storybook/addon-docs/blocks";
 
-import Icon from ".";
+import Icon, { icons } from ".";
 import { colors as themeColors } from "tokens";
 
 <Meta title="Components/Icon" />
@@ -9,52 +9,34 @@ import { colors as themeColors } from "tokens";
 
 SVG icons with customizable color and size, mainly to be used inside the buttons
 
-<Canvas>
-  <Story name="Default">
-    {[
-      "heart",
-      "arrowBack",
-      "settings",
-      "menu",
-      "viewGrid",
-      "viewItem",
-      "filter",
-    ].map((icon) => (
-      <Icon key={icon} name={icon} style={{padding: "1em"}} />
+<Preview>
+  <Story name="All">
+    {Object.keys(icons).map((icon) => (
+      <Icon key={icon} name={icon} style={{ padding: "1em" }} />
     ))}
   </Story>
-</Canvas>
-
-<Canvas>
-  <Story name="Colored">
-    <div>
-      {[
-        themeColors.primaryOrange100,
-        themeColors.primaryPurple100,
-        themeColors.secondaryYellow100,
-        themeColors.secondaryGreen100,
-      ].map((color) => {
-        return (
-          <div key={color} style={{ width: "100%" }}>
-            {[
-              "heart",
-              "arrowBack",
-              "settings",
-              "menu",
-              "viewGrid",
-              "viewItem",
-              "filter",
-            ].map((icon) => (
-              <Icon
-                key={icon}
-                name={icon}
-                color={color}
-                style={{padding: "1em"}} 
-              />
-            ))}
-          </div>
-        );
-      })}
-    </div>
+  <Story
+    name="Size"
+    argTypes={{
+      name: { control: { type: "select", options: Object.keys(icons) } },
+    }}
+    args={{ name: "heart", width: 24, height: 24 }}
+  >
+    {(args) => <Icon {...args} />}
   </Story>
-</Canvas>
+  <Story
+    name="Colors"
+    argTypes={{
+      name: { control: { type: "select", options: Object.keys(icons) } },
+      color: { control: { type: "select", options: Object.keys(themeColors) } },
+    }}
+    args={{ name: "heart", color: "primaryPurple100" }}
+  >
+    {({ name, color, ...args }) => {
+      const colorValue = themeColors[color];
+      return <Icon name={name} color={colorValue} />;
+    }}
+  </Story>
+</Preview>
+
+<ArgsTable of={Icon} />

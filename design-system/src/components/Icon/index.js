@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { string, number } from "prop-types";
 
 import { ReactComponent as SettingsIcon } from "./svg/setting.svg";
 import { ReactComponent as HeartIcon } from "./svg/heart.svg";
@@ -14,7 +15,7 @@ import { ReactComponent as filterIcon } from "./svg/filter.svg";
  * SVG icons wrapper
  */
 
-const icons = {
+export const icons = {
   settings: SettingsIcon,
   heart: HeartIcon,
   menu: MenuIcon,
@@ -24,13 +25,21 @@ const icons = {
   viewGrid: viewGridIcon,
   viewItem: viewItemIcon,
 };
-const Icon = ({ name, width = 24, height = 24, color = "#000", ...props }) => {
+
+const Icon = ({ name, width = 24, height = 24, color, ...props }) => {
   const SvgIcon = icons[name];
   return (
     <span className="icon" {...props} css={{ display: "inline-flex" }}>
       <SvgIcon fill={color} width={width} height={height} />
     </span>
   );
+};
+
+Icon.propTypes = {
+  name: string,
+  color: string,
+  height: number,
+  width: number,
 };
 
 export default Icon;

@@ -6,7 +6,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { colors } from "tokens";
-import { string } from "prop-types";
+import { bool, string } from "prop-types";
 
 const StyledButton = styled.button`
   display: inline-flex;
@@ -17,57 +17,46 @@ const StyledButton = styled.button`
   border: 1px solid;
   border-color: transparent;
   box-sizing: border-box;
-  line-height: 24px;
+  line-height: 32px;
   position: relative;
   user-select: none;
   text-decoration: none;
   border-radius: 1rem;
-  padding: ${(p) => (p.isIcon ? ".75rem" : "1rem")};
-  background-color: ${(p) => (p.color ? p.color : colors.primaryOrange100)};
+  padding: 11px;
+  background-color: ${(p) => (p.isOutline ? "transparent" : p.color)};
   opacity: ${(p) => (p.disabled ? 0.6 : 1)};
-  color: ${(p) => (p.textColor ? p.textColor : colors.secondaryWhite100)};
-  font-size: ${(p) => (p.size ? p.size : "14px")};
+  color: ${colors.secondaryWhite100};
+  font-size: 14px;
   font-weight: 700;
   width: ${(p) => (p.isStretched ? "100%" : null)};
   ${(p) =>
-    p.isOutline || p.isIcon
+    p.isOutline
       ? `
-   background-color: ${p.color ? p.color : "transparent"};
+   background-color: "transparent";
    border-color: ${colors.secondaryBlack20};
    color: ${colors.secondaryBlack100};`
       : ""}
 
   & .icon {
     margin: 0;
-    font-size: ${(p) => (p.size ? p.size : "1rem")};
+    font-size: 1rem;
   }
 `;
 
-const StyledButtonLink = styled(StyledButton).attrs({ as: "a" })`
-  pointer-events: ${(props) => (props.disabled ? "none" : "default")};
-`;
-
-const Button = ({ href, children, ...props }) => {
-  /* Check the button to a href attribute */
-  let isButtonLink = href ? true : false;
-
-  /*
-   * Different buttons to be rendered, depending on the
-   * given properties
-   */
-  if (isButtonLink) {
-    return (
-      <StyledButtonLink href={href} {...props}>
-        {children}
-      </StyledButtonLink>
-    );
-  } else {
-    return <StyledButton {...props}>{children}</StyledButton>;
-  }
+const Button = ({ label, children, ...props }) => {
+  return <StyledButton {...props}>{label ? label : children}</StyledButton>;
 };
 
 Button.propTypes = {
-  href: string,
+  label: string,
+  disabled: bool,
+  isStretched: bool,
+  isOutline: bool,
+  color: string,
+};
+
+Button.defaultProps = {
+  color: colors.primaryOrange100,
 };
 
 export default Button;

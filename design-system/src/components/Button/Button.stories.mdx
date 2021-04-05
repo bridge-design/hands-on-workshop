@@ -1,104 +1,80 @@
-import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { ArgsTable, Meta, Preview, Story } from "@storybook/addon-docs/blocks";
 import { config, withDesign } from "storybook-addon-designs";
-import  Icon from "../Icon";
-import  Button from ".";
-import { colors as themeColors } from 'tokens';
-
+import Icon, { icons } from "../Icon";
+import Button from ".";
+import { colors as themeColors } from "tokens";
 
 <Meta title="Components/Button" decorators={[withDesign]} />
 
+export const Template = ({ color, ...args }) => {
+  const colorValue = themeColors[color];
+  return <Button color={colorValue} {...args} />;
+};
+
+export const TemplateWithIcon = ({ name, ...args }) => {
+  return (
+    <Template {...args}>
+      <Icon name={name} />
+    </Template>
+  );
+};
 
 ## Buttons
 
 Button component provides interfaces for all types of the buttons. Different types of the buttons are coded as different components and imported here.
 
-<Canvas>
-  <Story name="Default" parameters={{
-    design: config({
-      type: "figma",
-      url:
-        "https://www.figma.com/file/iFt4Ah9rN39N1vg36P6nYd/Workshop_working_file?node-id=113%3A3473",
-    }),
-  }}>
-    <Button
-      onClick={function () {
-        alert("You clicked!");
-      }}
-    >
-      I am just a button
-    </Button>
-    
-    <Button href="#">
-      I am a link button
-    </Button>
-    <Button textColor="#fff" disabled href="#">
-      Disabled button with link
-    </Button>
+<Preview>
+  <Story
+    name="Default"
+    parameters={{
+      design: config({
+        type: "figma",
+        // replace this url with your own design file
+        url:
+          "https://www.figma.com/file/iFt4Ah9rN39N1vg36P6nYd/Workshop_working_file?node-id=113%3A3473",
+      }),
+    }}
+    args={{ label: "Button", disabled: false }}
+  >
+    {(args) => <Button {...args} />}
   </Story>
-</Canvas>
+  <Story name="Outline" args={{ label: "Button", isOutline: true }}>
+    {(args) => <Button {...args} />}
+  </Story>
+  <Story name="Stretched" args={{ label: "Button", isStretched: true }}>
+    {(args) => <Button {...args} />}
+  </Story>
+  <Story
+    name="Colors"
+    argTypes={{
+      color: { control: { type: "select", options: Object.keys(themeColors) } },
+    }}
+    args={{ label: "Button", color: "primaryPurple100" }}
+  >
+    {({ color, ...args }) => {
+      const colorValue = themeColors[color];
+      return <Button color={colorValue} {...args} />;
+    }}
+  </Story>
+  <Story
+    name="Button with Icon"
+    argTypes={{
+      name: { control: { type: "select", options: Object.keys(icons) } },
+      color: { control: { type: "select", options: Object.keys(themeColors) } },
+    }}
+    args={{ isOutline: true, name: "arrowBack" }}
+  >
+    {({ name, color, ...args }) => {
+      const colorValue = themeColors[color];
+      return (
+        <Button color={colorValue} {...args}>
+          <Icon name={name} />
+        </Button>
+      );
+    }}
+  </Story>
+</Preview>
 
-<Canvas>
-  <Story name="Style variants">
-    <div>
-      <Button>
-        Default
-      </Button>
-      <Button isOutline>
-        Outline
-      </Button>
-    </div>
-    <div style={{marginTop: "20px"}}>
-      <Button isStretched>
-        Full width Button
-      </Button>
-    </div>
-  </Story>
-</Canvas>
+## Props
 
-<Canvas>
-  <Story name="Colors">
-    <div>
-      {Object.entries(themeColors).map(([colorName, color]) => (
-      <Button color={color} textColor={colorName !== "white" ? "#fff" : "#000"} style={{margin: "15px"}}>
-        {colorName}
-      </Button>
-      ))}
-    </div>
-  </Story>
-</Canvas>
-
-<Canvas>
-  <Story name="Sizes">
-    <Button color={themeColors.primaryOrange100} textColor="#fff" size="0.60rem">
-      Tiny
-    </Button>
-    <Button color={themeColors.primaryPurple100} textColor="#fff" size="0.785rem">
-      Small
-    </Button>
-    <Button color={themeColors.secondaryPink100} textColor="#fff" size="1rem">
-      Normal
-    </Button>
-    <Button color={themeColors.secondaryGreen100} textColor="#fff" size="1.5rem">
-      Large
-    </Button>
-    <Button color={themeColors.secondaryBlack100} textColor="#fff" size="2.0rem">
-      XLarge
-    </Button>
-  </Story>
-</Canvas>
-
-<Canvas>
-  <Story name="Icon button">
-    <div>
-      <Button isIcon>
-        <Icon name="heart" />
-      </Button>
-      <Button isIcon>
-        <Icon name="arrowBack" />
-      </Button>
-      <Button isIcon>
-        <Icon name="settings" />
-      </Button>
-    </div>
-  </Story>
-</Canvas>
+<ArgsTable of={Button} />
