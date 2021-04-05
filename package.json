@@ -22,11 +22,11 @@
     "build:storybook": "yarn workspace design-system build:storybook",
     "product": "yarn workspace product start",
     "build:product": "yarn workspace product build",
-    "build": "yarn build:tokens && yarn build:design-system && yarn build:product",
     "version:design-system": "yarn workspace design-system version",
     "deploy": "yarn workspace product deploy",
-    "release": "yarn build && yarn version:design-system",
+    "release:product": "yarn build:product && yarn version:product",
     "postrelease": "git push && git push --tags",
+    "version:design-system": "yarn workspace design-system version",
     "version:product": "yarn workspace product version"
   },
   "eslintIgnore": [
