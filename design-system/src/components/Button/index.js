@@ -15,32 +15,22 @@ const StyledButton = styled.button`
   cursor: pointer;
   outline: none;
   border: 1px solid;
-  border-color: transparent;
+  border-color: ${(p) =>
+    p.isOutline ? colors.secondaryBlack20 : "transparent"};
   box-sizing: border-box;
-  line-height: 32px;
+  line-height: 24px;
   position: relative;
   user-select: none;
   text-decoration: none;
   border-radius: 1rem;
-  padding: 11px;
+  padding: ${(p) => (p.label ? "16px" : "12px")};
   background-color: ${(p) => (p.isOutline ? "transparent" : p.color)};
   opacity: ${(p) => (p.disabled ? 0.6 : 1)};
-  color: ${colors.secondaryWhite100};
+  color: ${(p) =>
+    p.isOutline ? colors.secondaryBlack100 : colors.secondaryWhite100};
   font-size: 14px;
   font-weight: 700;
   width: ${(p) => (p.isStretched ? "100%" : null)};
-  ${(p) =>
-    p.isOutline
-      ? `
-   background-color: "transparent";
-   border-color: ${colors.secondaryBlack20};
-   color: ${colors.secondaryBlack100};`
-      : ""}
-
-  & .icon {
-    margin: 0;
-    font-size: 1rem;
-  }
 `;
 
 const Button = ({ label, children, ...props }) => {

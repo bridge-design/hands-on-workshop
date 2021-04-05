@@ -36,6 +36,7 @@ const bodyStyles = css`
     line-height: ${t.paragraph3LineHeight};
     font-weight: ${t.paragraph3FontWeight};
     font-style: ${t.paragraph3FontStyle};
+    letter-spacing: ${t.paragraph3LetterSpacing};
   }
 
   h1 {
