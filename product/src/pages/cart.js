@@ -10,13 +10,13 @@ import avatarImg from "../assets/avatar.png";
 import item1Img from "../assets/item1.png";
 
 const StyledDiv1 = styled.div`
-  padding: 60px 35px 35px 35px;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  padding: 64px 40px;
 `;
 
 const StyledImage = styled.img`
   width: 48px;
   height: 48px;
+  display: block;
 `;
 
 const Styledh1 = styled.h1`
@@ -44,7 +44,8 @@ const StyledDiv4 = styled.div`
 `;
 
 const StyledDiv5 = styled.div`
-  padding: 30px 35px 35px 35px;
+  margin-top: 32px;
+  /* padding: 30px 35px 35px 35px; */
 `;
 const StyledDiv6 = styled.div`
   display: grid;
@@ -55,7 +56,8 @@ const StyledDiv6 = styled.div`
 
 const StyledImg = styled.img`
   max-width: 100%;
-  width: 100px;
+  width: 96px;
+  height: 100px;
 `;
 
 const Styledh6 = styled.h6`
@@ -94,7 +96,7 @@ const Cart = () => {
       <StyledDiv1>
         <StyledDiv2>
           <StyledImage src={avatarImg} />
-          <Button isIcon>
+          <Button isOutline>
             <Icon name="menu" />
           </Button>
         </StyledDiv2>
@@ -108,22 +110,24 @@ const Cart = () => {
             <StyledP>Men's Shoe, Black</StyledP>
           </StyledDiv4>
         </StyledDiv3>
-      </StyledDiv1>
-      <StyledDiv5>
-        <Styledh2>Summary</Styledh2>
-        <StyledDiv6>
-          <p>Subtotal</p>
-          <h6>€95.00</h6>
-          <p>Estimated Delivery & Handling</p>
-          <h6>€0.00</h6>
-        </StyledDiv6>
         <StyledBorder />
-        <StyledDiv6>
-          <BiggerP>Total</BiggerP>
-          <h4>€95.00</h4>
-        </StyledDiv6>
-        <Button isStretched>Checkout</Button>
-      </StyledDiv5>
+
+        <StyledDiv5>
+          <Styledh2>Summary</Styledh2>
+          <StyledDiv6>
+            <p>Subtotal</p>
+            <h6>€95.00</h6>
+            <p>Estimated Delivery & Handling</p>
+            <h6>€0.00</h6>
+          </StyledDiv6>
+          <StyledBorder />
+          <StyledDiv6>
+            <BiggerP>Total</BiggerP>
+            <h4>€95.00</h4>
+          </StyledDiv6>
+          <Button isStretched>Checkout</Button>
+        </StyledDiv5>
+      </StyledDiv1>
     </div>
   );
 };

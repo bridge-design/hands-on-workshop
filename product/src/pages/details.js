@@ -4,7 +4,7 @@ import { Button, Icon } from "design-system";
 import itemImg from "../assets/item1.png";
 
 const StyledDiv1 = styled.div`
-  padding: 60px 35px;
+  padding: 64px 40px;
 `;
 
 const StyledDiv2 = styled.div`
@@ -15,8 +15,9 @@ const StyledDiv2 = styled.div`
 const StyledDiv3 = styled.div`
   flex-grow: 2;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  margin-left: 24px;
 `;
 const StyledDiv4 = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ const StyledDiv4 = styled.div`
 `;
 const StyledDiv5 = styled.div`
   border-radius: 32px;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   position: relative;
 `;
 
@@ -38,6 +39,7 @@ const StyledButton = styled(Button)`
 
 const StyledImg = styled.img`
   max-width: 100%;
+  display: block;
 `;
 
 const StyledP = styled.p`
@@ -56,7 +58,7 @@ const Details = () => {
     <div>
       <StyledDiv1>
         <StyledDiv2>
-          <Button isIcon>
+          <Button isOutline>
             <Icon name="arrowBack" />
           </Button>
           <StyledDiv3>
@@ -65,13 +67,15 @@ const Details = () => {
         </StyledDiv2>
         <StyledDiv4>
           <StyledDiv5>
-            <StyledButton isIcon>
+            <StyledButton isOutline>
               <Icon name="heart" />
             </StyledButton>
             <StyledImg src={itemImg} alt="" />
           </StyledDiv5>
           <StyledP> Men's Shoe</StyledP>
-          <Styledh1>Nike Air Force 1 '07</Styledh1>
+          <Styledh1>
+            Nike Air Force 1{"\u00A0"}'07{"\u00A0"}LX
+          </Styledh1>
           <Styledh2>€95.00</Styledh2>
           <Button>Add to Cart</Button>
         </StyledDiv4>

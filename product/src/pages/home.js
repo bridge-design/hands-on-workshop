@@ -13,7 +13,7 @@ import item3Img from "../assets/item3.png";
 import item4Img from "../assets/item4.png";
 
 const StyledDiv1 = styled.div`
-  padding: 60px 35px;
+  padding: 64px 40px;
 `;
 
 const StyledImage = styled.img`
@@ -35,7 +35,7 @@ const StyledDiv2 = styled.div`
 const StyledDiv3 = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 `;
 const StyledDiv4 = styled.div`
   display: flex;
@@ -45,7 +45,7 @@ const StyledDiv4 = styled.div`
 const StyledDiv5 = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 32px 24px;
 `;
 
 const StyledDiv6 = styled.div`
@@ -66,10 +66,14 @@ const StyledImg = styled.img`
 `;
 
 const StyledButton = styled(Button)`
-  padding: 0 4px;
+  padding: 0;
   border: 0;
   margin: 0 8px;
+  &:last-child {
+    margin-right: 0;
+  }
 `;
+
 const StyledP = styled.p`
   color: #f15223;
   font-weight: 700;
@@ -82,7 +86,7 @@ const Home = () => {
       <StyledDiv1>
         <StyledDiv2>
           <StyledImage src={avatarImg} />
-          <Button isIcon>
+          <Button isOutline>
             <Icon name="menu" />
           </Button>
         </StyledDiv2>
@@ -92,15 +96,15 @@ const Home = () => {
           <h4>All Product</h4>
 
           <StyledDiv4>
-            <StyledButton isIcon>
-              <Icon name="viewItem" width={16} height={16} />
+            <StyledButton color="transparent">
+              <Icon name="viewItem" width={24} height={16} />
             </StyledButton>
-            <StyledButton isIcon>
-              <Icon name="viewGrid" width={16} height={16} />
+            <StyledButton color="transparent">
+              <Icon name="viewGrid" width={24} height={16} />
             </StyledButton>
             <StyledBorder />
-            <StyledButton isIcon>
-              <Icon name="filter" width={16} height={16} />
+            <StyledButton color="transparent">
+              <Icon name="filter" width={24} height={16} />
             </StyledButton>
           </StyledDiv4>
         </StyledDiv3>
