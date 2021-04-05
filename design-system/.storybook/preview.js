@@ -17,7 +17,6 @@ export const parameters = {
     },
   },
   actions: { disabled: true },
-  controls: { disabled: true },
 };
 
 // Load the font and avoid re-loading it when components change

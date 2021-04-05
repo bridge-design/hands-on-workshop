@@ -3,7 +3,7 @@ const pathToInlineSvg = path.resolve(__dirname, "../src/components/Icon/svg");
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.js"],
-  addons: ["@storybook/addon-essentials", "creevey", "storybook-addon-designs"],
+  addons: ["@storybook/addon-essentials", "storybook-addon-designs"],
   webpackFinal: async (config) => {
     // use @babel/preset-react for JSX and env (instead of staged presets)
     config.module.rules[0].use[0].options.presets = [
