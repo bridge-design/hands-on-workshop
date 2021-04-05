@@ -21,15 +21,45 @@ function writeFileErrorHandler(err) {
   if (err) throw err;
 }
 
-fs.writeFileSync(
+// Write component template
+fs.writeFile(
   path.resolve(`${dir}/index.js`),
   component(name),
   writeFileErrorHandler
 );
 
-fs.writeFileSync(
+// Write storybook template
+fs.writeFile(
   path.resolve(`${dir}/${name}.stories.mdx`),
   story(name),
   writeFileErrorHandler
 );
+
+// insert new component into 'components/index.ts file
+fs.readFile("./src/index.js", "utf8", function (err, data) {
+  if (err) throw err;
+
+  // grab all components and combine them with new component
+  const currentComponents = data.match(/(?<={ default as )(.*?)(?= })/g);
+  const newComponents = [name, ...currentComponents].sort();
+
+  const fileComment = `/*
+ * This is an index file for your library.
+ * It's being updated automatically by add-component script
+ * Don't edit it directly, your chages will be overwritten.
+ */`;
+
+  // create the import and export statements
+  const exportStatements = newComponents
+    .map(
+      (component) =>
+        `export { default as ${component} } from "./components/${component}";\n`
+    )
+    .join("");
+
+  const fileContent = `${fileComment}\n${exportStatements}`;
+
+  fs.writeFile(`./src/index.js`, fileContent, writeFileErrorHandler);
+});
+
 console.log(`Created component ${name}`);
