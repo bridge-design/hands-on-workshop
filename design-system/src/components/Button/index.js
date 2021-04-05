@@ -34,6 +34,7 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({ label, children, ...props }) => {
+  console.log("🚀 ~ file: index.js ~ line 37 ~ Button ~ props", props);
   return <StyledButton {...props}>{label ? label : children}</StyledButton>;
 };
 
