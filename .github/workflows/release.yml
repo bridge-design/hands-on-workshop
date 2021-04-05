@@ -53,9 +53,9 @@ jobs:
         run: |
           yarn install --frozen-lockfile
 
-      - name: Build everything
+      - name: Build product
         run: |
-          yarn build
+          yarn build:product
           
       - name: Deploy product
         uses: JamesIves/github-pages-deploy-action@4.1.0
