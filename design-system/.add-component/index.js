@@ -53,6 +53,7 @@ export { default as GlobalStyle } from "src/global.js";\n\n`;
 
   // create the import and export statements
   const exportStatements = newComponents
+    .filter(component => (component !== "GlobalStyle"))
     .map(
       (component) =>
         `export { default as ${component} } from "./components/${component}";\n`
