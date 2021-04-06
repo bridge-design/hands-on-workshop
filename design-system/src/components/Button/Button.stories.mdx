@@ -6,19 +6,6 @@ import { colors as themeColors } from "tokens";
 
 <Meta title="Components/Button" decorators={[withDesign]} />
 
-export const Template = ({ color, ...args }) => {
-  const colorValue = themeColors[color];
-  return <Button color={colorValue} {...args} />;
-};
-
-export const TemplateWithIcon = ({ name, ...args }) => {
-  return (
-    <Template {...args}>
-      <Icon name={name} />
-    </Template>
-  );
-};
-
 ## Buttons
 
 Button component provides interfaces for all types of the buttons. Different types of the buttons are coded as different components and imported here.
@@ -27,13 +14,15 @@ Button component provides interfaces for all types of the buttons. Different typ
   <Story
     name="Default"
     parameters={{
+      // Configuration for design plugin, which allows to display linked Figma frame
       design: config({
         type: "figma",
-        // replace this url with your own design file
+        // replace this url with your own design file to link:
         url:
           "https://www.figma.com/file/iFt4Ah9rN39N1vg36P6nYd/Workshop_working_file?node-id=113%3A3473",
       }),
     }}
+    // Props values for the story
     args={{ label: "Button", disabled: false }}
   >
     {(args) => <Button {...args} />}
@@ -46,12 +35,14 @@ Button component provides interfaces for all types of the buttons. Different typ
   </Story>
   <Story
     name="Colors"
+    // Custom select control, which receives values from the name of color tokens
     argTypes={{
       color: { control: { type: "select", options: Object.keys(themeColors) } },
     }}
     args={{ label: "Button", color: "primaryPurple100" }}
   >
     {({ color, ...args }) => {
+      // Resolve color rgb value from color name, which we receive from select control
       const colorValue = themeColors[color];
       return <Button color={colorValue} {...args} />;
     }}
