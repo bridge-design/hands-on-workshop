@@ -1,0 +1,23 @@
+# This wqorkflow will be triggered every time when new version of library released
+name: Library release
+on:
+  push:
+
+jobs:
+  start-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Start Storybook
+        run: yarn start &
+      - name: Run Visual Regression test
+        run: yarn test
+      - uses: actions/upload-artifact@v2
+        with:
+          name: report
+          path: design-system/report/

@@ -24,7 +24,7 @@
     "babel-plugin-styled-components": "^1.12.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "copy-webpack-plugin": "^4.6.0",
-    "creevey": "^0.7.23",
+    "creevey": "^0.7.27",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-loader": "^1.9.0",

@@ -17,6 +17,11 @@ export const parameters = {
     },
   },
   actions: { disabled: true },
+  creevey: {
+    skip: {
+      stories: ["Page"],
+    },
+  },
 };
 
 // Load the font and avoid re-loading it when components change
