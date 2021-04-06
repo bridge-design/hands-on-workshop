@@ -11,24 +11,21 @@
     "product"
   ],
   "scripts": {
-    "build:tokens": "yarn workspace tokens build",
-    "tokens:version": "yarn workspace tokens version",
     "start": "yarn workspace design-system start",
+    "tokens:build": "yarn workspace tokens build",
+    "tokens:version": "yarn workspace tokens version",
     "design-system": "yarn workspace design-system start",
+    "design-system:build": "yarn workspace design-system build",
+    "design-system:version": "yarn workspace design-system version",
+    "storybook:build": "yarn workspace design-system storybook:build",
     "add-component": "yarn workspace design-system add-component",
     "test": "yarn workspace design-system loki test",
     "test:update": "yarn workspace design-system loki update",
     "test:approve": "yarn workspace design-system loki approve",
-    "build:design-system": "yarn workspace design-system build",
-    "build:storybook": "yarn workspace design-system build:storybook",
     "product": "yarn workspace product start",
-    "build:product": "yarn workspace product build",
-    "version:design-system": "yarn workspace design-system version",
-    "deploy": "yarn workspace product deploy",
-    "release:product": "yarn build:product && yarn version:product",
-    "postrelease": "git push && git push --tags",
-    "version:design-system": "yarn workspace design-system version",
-    "version:product": "yarn workspace product version"
+    "product:build": "yarn workspace product build",
+    "product:version": "yarn workspace product version",
+    "deploy": "yarn workspace product deploy"
   },
   "eslintIgnore": [
     "product",
@@ -57,7 +54,6 @@
     "parser": "babel-eslint"
   },
   "author": "Varya Stepanova <mail@varya.me>",
-  "license": "ISC",
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   },
