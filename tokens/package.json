@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "mkdirp dist && cpy index.js dist && style-dictionary build --config ./config.js"
+    "build": "mkdirp dist && cpy index.js dist && style-dictionary build --config ./config.js",
+    "version": "yarn build && git add dist/"
   },
   "devDependencies": {
     "cpy-cli": "^3.1.1",
