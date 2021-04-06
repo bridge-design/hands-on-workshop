@@ -49,7 +49,7 @@ fs.readFile("./src/index.js", "utf8", function (err, data) {
  * Don't edit it directly, your chages will be overwritten.
  */
 
-export { default as GlobalStyle } from "src/global.js";\n\n`;
+export { default as GlobalStyle } from "./global.js";\n\n`;
 
   // create the import and export statements
   const exportStatements = newComponents
