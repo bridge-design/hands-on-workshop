@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build:tokens": "yarn workspace tokens build",
+    "tokens:version": "yarn workspace tokens version",
     "start": "yarn workspace design-system start",
     "design-system": "yarn workspace design-system start",
     "add-component": "yarn workspace design-system add-component",
