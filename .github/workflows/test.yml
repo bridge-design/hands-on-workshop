@@ -17,7 +17,7 @@ jobs:
       - name: Start Storybook
         run: yarn start &
       - name: Run Visual Regression test
-        run: yarn test
+        run: yarn test:creevey
       - uses: actions/upload-artifact@v2
         with:
           name: report
