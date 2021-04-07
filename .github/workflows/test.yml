@@ -1,8 +1,9 @@
-# This wqorkflow will be triggered every time when new version of library released
-name: Library release
+# This wqorkflow runs visual tests every time 
+name: Run visual tests
 on:
   push:
-
+    paths:
+      - 'design-system/src/**'
 jobs:
   start-and-test:
     runs-on: ubuntu-latest
