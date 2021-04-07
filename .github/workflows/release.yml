@@ -55,7 +55,7 @@ jobs:
 
       - name: Build product
         run: |
-          yarn build:product
+          yarn product:build
           
       - name: Deploy product
         uses: JamesIves/github-pages-deploy-action@4.1.0
