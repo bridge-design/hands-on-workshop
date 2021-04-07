@@ -2,6 +2,7 @@
   "name": "hands-on-workshop",
   "version": "0.0.0",
   "description": "A starter repository for Hands-on with Design systems workshop",
+  "author": "Varya Stepanova <mail@varya.me>",
   "main": "https://github.com/bridge-design/hands-on-workshop#readme",
   "private": true,
   "license": "MIT",
@@ -19,9 +20,12 @@
     "design-system:version": "yarn workspace design-system version",
     "storybook:build": "yarn workspace design-system storybook:build",
     "add-component": "yarn workspace design-system add-component",
-    "test": "yarn workspace design-system loki test",
-    "test:update": "yarn workspace design-system loki update",
-    "test:approve": "yarn workspace design-system loki approve",
+    "test:creevey": "yarn workspace design-system creevey",
+    "test:creevey:update": "yarn workspace design-system creevey --update",
+    "test:creevey:runner": "yarn workspace design-system creevey --ui",
+    "test:loki": "yarn workspace design-system loki test",
+    "test:loki:update": "yarn workspace design-system loki update",
+    "test:loki:approve": "yarn workspace design-system loki approve",
     "product": "yarn workspace product start",
     "product:build": "yarn workspace product build",
     "product:version": "yarn workspace product version",
@@ -53,7 +57,6 @@
     ],
     "parser": "babel-eslint"
   },
-  "author": "Varya Stepanova <mail@varya.me>",
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   },
