@@ -94,7 +94,7 @@ product/
 
 #### Scripts
 
-- `yarn product` - starts development server at https://localhost:8080
+- `yarn product` - starts development server at https://localhost:3000
 - `yarn product:build` - creates minified production build
 - `yarn product:version` - bumps product version
 - `yarn deploy` - deploy product manually. Normally you don't need it, Github Action s will deploy automatically every time you release a new version.
