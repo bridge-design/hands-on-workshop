@@ -64,9 +64,13 @@ design-system/
 - `yarn add-component <ComponentName>` - adds template files for new component
 - `yarn design-system:build` - builds components library into `dist/` folder.
 - `yarn design-system:version` - bumps library version and creates a commit with contents of `dist/` folder.
-- `yarn test` - run tests
-- `yarn test:update` - update all failing screenshots
-- `yarn test:runner` - run tests in UI
+  
+- `yarn test:creevey` - run tests with [creevey](https://github.com/wKich/creevey)
+- `yarn test:creevey:runner` - run creevey with UI
+- `yarn test:creevey:update` - update all screenshots for creevey
+- `yarn test:loki` - run tests with [loki](https://loki.js.org/)
+- `yarn test:loki:update` - update all screenshots for loki
+- `yarn test:loki:approve` - approve all failing screenshots for loki
 
 
 ### Product
