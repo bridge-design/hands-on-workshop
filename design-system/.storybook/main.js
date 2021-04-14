@@ -4,15 +4,8 @@ const webpack = require("webpack");
 const WatchExternalFilesPlugin = require("webpack-watch-files-plugin").default;
 const ExtraWatchWebpackPlugin = require("extra-watch-webpack-plugin");
 
-// const StyleDictionary = require("style-dictionary").extend(
-//   "./.tokens/config.js"
-// );
-
-// console.log(
-//   "🚀 ~ file: main.js ~ line 8 ~ StyleDictionary",
-//   StyleDictionary.format.customES6
-// );
-// StyleDictionary.buildPlatform("js");
+const tokensFileName = "design-tokens.json";
+const tokensPath = "./src/tokens/";
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.js"],
@@ -49,26 +42,31 @@ module.exports = {
       ],
     });
 
-    class WatchDesignTokensPlugin {
-      apply(compiler) {
-        compiler.hooks.beforeCompile.tap("CustomContextPlugin", (params) => {
+    /*
+     * Add plugin which adds design-tokens source file to watch scope
+     */
+    config.plugins.push({
+      apply: (compiler) => {
+        compiler.hooks.beforeCompile.tap("WatchTokensSource", (params) => {
           params.compilationDependencies.add(
-            path.resolve(__dirname, "../.tokens", "design-tokens.json")
+            path.resolve(__dirname, tokensFileName)
           );
         });
-      }
-    }
-    config.plugins.push(new WatchDesignTokensPlugin());
+      },
+    });
 
+    /*
+     * Add plugin which detects if design-token file was invalidated and rebuilds tokens
+     */
     config.plugins.push({
       apply: (compiler) => {
         compiler.hooks.invalid.tap("RebuildTokens", (fn) => {
           const StyleDictionary = require("style-dictionary").extend(
-            "./.tokens/config.js"
+            `${tokensPath}/config.js`
           );
 
           if (/design-tokens.json$/.test(fn)) {
-            StyleDictionary.extend("./.tokens/config.js");
+            // StyleDictionary.extend("./.tokens/config.js");
             StyleDictionary.buildPlatform("js");
           }
         });

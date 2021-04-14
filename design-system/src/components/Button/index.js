@@ -5,7 +5,7 @@
 
 import React from "react";
 import styled, { css } from "styled-components";
-import { colors } from "../../tokens";
+import { colors } from "../../tokens/dist";
 import { bool, string } from "prop-types";
 
 const StyledButton = styled.button`
