@@ -4,12 +4,12 @@
   "main": "dist/design-system.js",
   "license": "MIT",
   "scripts": {
-    "start": "start-storybook -p 6006",
+    "start": "yarn tokens && start-storybook -p 6006",
     "build": "webpack --mode=production",
     "storybook:build": "build-storybook",
     "add-component": "node .add-component/index.js",
     "version": "yarn build && git add dist/",
-    "tokens": "style-dictionary build --config ./.tokens/config.js"
+    "tokens": "style-dictionary build --config ./src/tokens/config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
