@@ -5,7 +5,7 @@
 
 import React from "react";
 import styled, { css } from "styled-components";
-import { colors } from "tokens";
+import { colors } from "../../tokens";
 import { bool, string } from "prop-types";
 
 const StyledButton = styled.button`
@@ -34,7 +34,6 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({ label, children, ...props }) => {
-  console.log("🚀 ~ file: index.js ~ line 37 ~ Button ~ props", props);
   return <StyledButton {...props}>{label ? label : children}</StyledButton>;
 };
 

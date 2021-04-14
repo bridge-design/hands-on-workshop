@@ -7,14 +7,12 @@
   "private": true,
   "license": "MIT",
   "workspaces": [
-    "tokens",
     "design-system",
     "product"
   ],
   "scripts": {
     "start": "yarn workspace design-system start",
-    "tokens:build": "yarn workspace tokens build",
-    "tokens:version": "yarn workspace tokens version",
+    "tokens": "yarn workspace design-system tokens",
     "design-system": "yarn workspace design-system start",
     "design-system:build": "yarn workspace design-system build",
     "design-system:version": "yarn workspace design-system version",

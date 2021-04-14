@@ -1,5 +1,5 @@
 import { createGlobalStyle, css } from "styled-components";
-import { typography as t } from "tokens";
+import { typography as t } from "./tokens";
 const paragraph3FontFamily = t.paragraph3FontFamily;
 const bodyStyles = css`
   overflow-y: auto;
