@@ -1,6 +1,5 @@
 import { createGlobalStyle, css } from "styled-components";
-import { typography as t } from "tokens";
-const paragraph3FontFamily = t.paragraph3FontFamily;
+import { typography as t } from "./tokens";
 const bodyStyles = css`
   overflow-y: auto;
   overflow-x: hidden;
@@ -9,7 +8,7 @@ const bodyStyles = css`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
-  font-family: ${paragraph3FontFamily};
+  font-family: ${t.paragraph3FontFamily};
   font-size: ${t.paragraph3FontSize};
   font-weight: ${t.paragraph3FontWeight};
   font-style: ${t.paragraph3FontStyle};

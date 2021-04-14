@@ -16,7 +16,7 @@ export const parameters = {
       order: ["Intro", "Typography", "Color Palette", "Components"],
     },
   },
-  actions: { disabled: true },
+  actions: { disable: true },
   creevey: {
     skip: {
       stories: ["Page"],

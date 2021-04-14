@@ -1,11 +1,10 @@
 const StyleDictionary = require("style-dictionary");
 
 StyleDictionary.registerTransform({
-  name: "size/px", // notice: the name is an override of an existing predefined method (yes, you can do it)
+  name: "size/px", // notice: the name is an override of an existing predefined method
   type: "value",
   matcher: function (prop) {
     /* supports both "pixel" and "pixels" */
-
     return (
       prop &&
       prop.original &&
@@ -29,11 +28,11 @@ StyleDictionary.registerFilter({
 });
 
 module.exports = {
-  source: ["./design-tokens.json"],
+  source: ["./src/tokens/design-tokens.json"],
   platforms: {
     js: {
       transformGroup: "js",
-      buildPath: "./dist/",
+      buildPath: "./src/tokens/dist/",
       transforms: ["size/px", "name/cti/camel"],
       /* We split tokens into separate files - it will be easier to use them this way */
       files: [

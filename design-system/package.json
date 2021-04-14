@@ -4,11 +4,12 @@
   "main": "dist/design-system.js",
   "license": "MIT",
   "scripts": {
-    "start": "start-storybook -p 6006",
+    "start": "yarn tokens && start-storybook -p 6006",
     "build": "webpack --mode=production",
     "storybook:build": "build-storybook",
     "add-component": "node .add-component/index.js",
-    "version": "yarn build && git add dist/"
+    "version": "yarn build && git add dist/",
+    "tokens": "style-dictionary build --config ./src/tokens/config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -44,8 +45,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "styled-components": "^5.2.1",
-    "tokens": "0.1.0"
+    "styled-components": "^5.2.1"
   },
   "loki": {
     "configurations": {
