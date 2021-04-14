@@ -6,22 +6,6 @@ This is a starter repositiry for the particpants of the workshop. Refer to [Hand
 
 The project is split into 2 independent [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/). Read below what you can do with each of them.
 
-#### Folder structure
-
-```
-tokens/
-┣ dist/
-┃ ┣ colors.js
-┃ ┣ index.js
-┃ ┗ typography.js
-┣ config.js
-┣ design-tokens.json
-┗ package.json
-```
-
-Place `design-tokens.json`(a file exported from Figma) in the root of `tokens` folder. After running build, processed files will be added to `tokens/dist`.
-
-Inside a `config.js` you already got a tailored style-dictionary config, which works well with current setup. If you want to change the shape of your tokens, please refer to [style-dictionary documentation](https://amzn.github.io/style-dictionary/#/README).
 
 #### Scripts
 
@@ -30,8 +14,7 @@ Inside a `config.js` you already got a tailored style-dictionary config, which w
 
 ### Design system
 
-A workspace for developing your components library. It has storybook
-
+A workspace for processing design tokens and developing your components library. 
 
 #### Dependencies
 - [Storybook](https://storybook.js.org) for development and preview of components
@@ -63,6 +46,12 @@ design-system/
 ┣ package.json
 ┗ webpack.config.js
 ```
+
+#### Working with tokens
+
+Place `design-tokens.json`(a file exported from Figma) into the `design-system/src/tokens` folder. After running build, processed files will be added to `tokens/dist`.
+
+Inside a `config.js` you already got a tailored style-dictionary config, which works well with current setup. If you want to change the shape of your tokens, please refer to [style-dictionary documentation](https://amzn.github.io/style-dictionary/#/README).
 
 #### Scripts
 
