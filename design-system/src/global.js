@@ -1,5 +1,5 @@
 import { createGlobalStyle, css } from "styled-components";
-import { typography as t } from "./tokens/dist";
+import { typography as t } from "./tokens";
 const bodyStyles = css`
   overflow-y: auto;
   overflow-x: hidden;
