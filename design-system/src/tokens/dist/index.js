@@ -1,6 +1,6 @@
 /*
- * This file is for reexporting your tokens as a singl entity.
- * It will be copied to dist/ folder.
+ * This file is for reexporting your tokens as a single entity.
+ * It should not be removed
  * If you are adding new token category, import it here
  */
 

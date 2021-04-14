@@ -4,11 +4,7 @@ This is a starter repositiry for the particpants of the workshop. Refer to [Hand
 
 ## Project structure
 
-The project is split into 3 independent [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/). Read below what you can do with each of them.
-
-### Tokens
-
-A workspace for processing Figma tokens. It uses [style-dictionary](https://github.com/amzn/style-dictionary) to transform exported JSON into JS object of a convenient shape.
+The project is split into 2 independent [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/). Read below what you can do with each of them.
 
 #### Folder structure
 
@@ -34,8 +30,14 @@ Inside a `config.js` you already got a tailored style-dictionary config, which w
 
 ### Design system
 
-A workspace for developing your components library.
+A workspace for developing your components library. It has storybook
 
+
+#### Dependencies
+- [Storybook](https://storybook.js.org) for development and preview of components
+- [Style-dictionary](https://github.com/amzn/style-dictionary) for transforming raw json with tokens, xported from Figma to ES6 modules.
+- [Webpack](https://webpack.js.org/) for building the library.
+- Optional: visual regression tests with [Creevey](https://github.com/wKich/creevey) or [Loki](http://loki.js.org/)
 #### Folder structure
 
 ```
@@ -49,6 +51,10 @@ design-system/
 ┃ ┣ components/
 ┃ ┃ ┣ Button/
 ┃ ┃ ┗ Icon/
+┃ ┣ tokens/
+┃ ┃ ┣ dist/
+┃ ┃ ┣ config.js
+┃ ┃ ┗ design-tokens.json
 ┃ ┣ color.stories.mdx
 ┃ ┣ global.js
 ┃ ┣ index.js
@@ -64,7 +70,7 @@ design-system/
 - `yarn add-component <ComponentName>` - adds template files for new component
 - `yarn design-system:build` - builds components library into `dist/` folder.
 - `yarn design-system:version` - bumps library version and creates a commit with contents of `dist/` folder.
-  
+- `yarn tokens` - rebuilds tokens
 - `yarn test:creevey` - run tests with [creevey](https://github.com/wKich/creevey)
 - `yarn test:creevey:runner` - run creevey with UI
 - `yarn test:creevey:update` - update all screenshots for creevey
