@@ -56,7 +56,7 @@ Button component provides interfaces for all types of the buttons. Different typ
       name: { control: { type: "select", options: Object.keys(icons) } },
       color: { control: { type: "select", options: Object.keys(themeColors) } },
     }}
-    args={{ isOutline: true, name: "arrowBack" }}
+    args={{ isOutline: true, name: "arrowBack", isActive: true }}
   >
     {({ name, color, ...args }) => {
       const colorValue = themeColors[color];
