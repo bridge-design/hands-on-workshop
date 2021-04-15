@@ -10,13 +10,13 @@ import cardPink from "./cardPink.svg"
 
 ## Carousel
 
-Simple carousel to display payment method options
-
-
+<!-- We export const only because MDX won't let us simply declare it (https://github.com/mdx-js/mdx/issues/390#issuecomment-461158808) -->
 export const images  = [{source: card}, {source: cardBlue}, {source: cardPink}];
 
 <Preview>
-  <Story name="Default">
+  {/* Simple story without "controls" tab at the bottom.
+   * This tab is enabled by default, we can hide it explicitly (otherwise it will be shown empty */}
+  <Story name="Default" parameters={{ controls: { disable: true } }}>
     <Carousel images={images}/>
   </Story>
 </Preview>

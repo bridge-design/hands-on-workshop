@@ -4,9 +4,11 @@
  */
 import React from "react";
 import styled from "styled-components";
-import { Button, Icon } from "design-system";
+import { Button, Icon, Carousel } from "design-system";
 
-import cardImg from "../assets/Card.svg";
+import card from "../assets/card.svg";
+import cardBlue from "../assets/cardBlue.svg";
+import cardPink from "../assets/cardPink.svg";
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px 40px 40px;
@@ -103,12 +105,20 @@ const Checkout = () => {
           </Button>
         </StyledDiv2>
         <Styledh2>Payment Method</Styledh2>
-        <img src={cardImg} alt="card" />
+        <img src={card} alt="card" />
         <StyledUl>
           <StyledLi />
           <StyledLi />
           <StyledLi />
         </StyledUl>
+        <Carousel
+          images={[
+            { source: card },
+            { source: cardBlue },
+            { source: cardPink },
+          ]}
+        />
+        {/* </div> */}
       </StyledDiv1>
       <StyledDiv4>
         <StyledDiv5>

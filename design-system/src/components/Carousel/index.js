@@ -3,10 +3,10 @@ import styled from "styled-components";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import { colors } from "tokens";
-import { secondaryBlack100 } from "../../tokens/dist/colors";
+
 /* Carousel
  *
- * TODO: add component description
+ * Simple carousel to display payment method options
  */
 const Carousel = ({ images, ...props }) => {
   console.log("🚀 ~ file: index.js ~ line 12 ~ Carousel ~ images", images);
@@ -37,6 +37,7 @@ export const StyledCarousel = styled.div`
     object-fit: contain;
   }
   .awssld__bullets {
+    position: relative;
     padding: 0;
     display: flex;
     justify-content: center;
