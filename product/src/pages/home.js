@@ -4,7 +4,7 @@
  */
 import React from "react";
 import styled from "styled-components";
-import { Button, Icon } from "design-system";
+import { Avatar, Button, Icon } from "design-system";
 
 import avatarImg from "../assets/avatar.png";
 import item1Img from "../assets/item1.png";
@@ -14,11 +14,6 @@ import item4Img from "../assets/item4.png";
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px;
-`;
-
-const StyledImage = styled.img`
-  width: 48px;
-  height: 48px;
 `;
 
 const Styledh1 = styled.h1`
@@ -85,7 +80,7 @@ const Home = () => {
     <div>
       <StyledDiv1>
         <StyledDiv2>
-          <StyledImage src={avatarImg} />
+          <Avatar src={avatarImg} />
           <Button isOutline>
             <Icon name="menu" />
           </Button>
