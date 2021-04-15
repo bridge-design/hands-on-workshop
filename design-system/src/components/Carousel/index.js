@@ -9,7 +9,6 @@ import { colors } from "tokens";
  * Simple carousel to display payment method options
  */
 const Carousel = ({ images, ...props }) => {
-  console.log("🚀 ~ file: index.js ~ line 12 ~ Carousel ~ images", images);
   return (
     <StyledCarousel>
       <AwesomeSlider organicArrows={false} {...props}>
@@ -38,6 +37,7 @@ export const StyledCarousel = styled.div`
   }
   .awssld__bullets {
     position: relative;
+    bottom: 0;
     padding: 0;
     display: flex;
     justify-content: center;
