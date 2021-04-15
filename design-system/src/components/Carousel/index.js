@@ -14,8 +14,8 @@ const Carousel = ({ images, ...props }) => {
       <AwesomeSlider organicArrows={false} {...props}>
         {images &&
           images.map((image) => (
-            <div style={{ display: "flex" }}>
-              <img key={image.source} src={image.source} />
+            <div key={image.source} style={{ display: "flex" }}>
+              <img src={image.source} />
             </div>
           ))}
       </AwesomeSlider>

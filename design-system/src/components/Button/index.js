@@ -33,8 +33,12 @@ const StyledButton = styled.button`
   width: ${(p) => (p.isStretched ? "100%" : null)};
 `;
 
-const Button = ({ label, children, ...props }) => {
-  return <StyledButton {...props}>{label ? label : children}</StyledButton>;
+const Button = ({ href, label, children, to, ...props }) => {
+  return (
+    <StyledButton as={href && "a"} href={href} {...props}>
+      {label ? label : children}
+    </StyledButton>
+  );
 };
 
 Button.propTypes = {
