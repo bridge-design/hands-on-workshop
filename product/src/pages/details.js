@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Button, Icon } from "design-system";
 import itemImg from "../assets/item1.png";
+import { Link } from "react-router-dom";
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px;
@@ -15,7 +16,6 @@ const StyledDiv2 = styled.div`
 const StyledDiv3 = styled.div`
   flex-grow: 2;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   margin-left: 24px;
 `;
@@ -58,9 +58,11 @@ const Details = () => {
     <div>
       <StyledDiv1>
         <StyledDiv2>
-          <Button isOutline>
-            <Icon name="arrowBack" />
-          </Button>
+          <Link to="/">
+            <Button isOutline>
+              <Icon name="arrowBack" />
+            </Button>
+          </Link>
           <StyledDiv3>
             <h4>Nike Air Force 1 '07 LX</h4>
           </StyledDiv3>
@@ -77,7 +79,9 @@ const Details = () => {
             Nike Air Force 1{"\u00A0"}'07{"\u00A0"}LX
           </Styledh1>
           <Styledh2>€95.00</Styledh2>
-          <Button>Add to Cart</Button>
+          <Link to="/cart" style={{ textDecoration: "none" }}>
+            <Button isStretched>Add to Cart</Button>
+          </Link>
         </StyledDiv4>
       </StyledDiv1>
     </div>

@@ -5,6 +5,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Avatar, Button, Icon } from "design-system";
+import { Link } from "react-router-dom";
 
 import avatarImg from "../assets/avatar.png";
 import item1Img from "../assets/item1.png";
@@ -43,9 +44,11 @@ const StyledDiv5 = styled.div`
   gap: 32px 24px;
 `;
 
-const StyledDiv6 = styled.div`
+const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 `;
 
 const StyledBorder = styled.div`
@@ -104,26 +107,26 @@ const Home = () => {
           </StyledDiv4>
         </StyledDiv3>
         <StyledDiv5>
-          <StyledDiv6>
+          <StyledLink to="/details">
             <StyledImg src={item1Img} alt="" />
             <h4>Nike Air Force 1 '07</h4>
             <StyledP>€95.00</StyledP>
-          </StyledDiv6>
-          <StyledDiv6>
+          </StyledLink>
+          <StyledLink to="/details">
             <StyledImg src={item2Img} alt="" />
             <h4>Nike Air Shadow Force</h4>
             <StyledP>€105.00</StyledP>
-          </StyledDiv6>
-          <StyledDiv6>
+          </StyledLink>
+          <StyledLink to="/details">
             <StyledImg src={item3Img} alt="" />
             <h4>Nike Air Force 1 '07</h4>
             <StyledP>€95.00</StyledP>
-          </StyledDiv6>
-          <StyledDiv6>
+          </StyledLink>
+          <StyledLink to="/details">
             <StyledImg src={item4Img} alt="" />
             <h4>Nike Air Force 1 '07</h4>
             <StyledP>€95.00</StyledP>
-          </StyledDiv6>
+          </StyledLink>
         </StyledDiv5>
       </StyledDiv1>
     </div>

@@ -5,6 +5,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button, Icon, Carousel, Select } from "design-system";
+import { Link } from "react-router-dom";
 
 import card from "../assets/card.svg";
 import cardBlue from "../assets/cardBlue.svg";
@@ -68,9 +69,11 @@ const Checkout = () => {
     <div>
       <StyledDiv1>
         <StyledDiv2>
-          <Button isIcon color="#fff">
-            <Icon name="arrowBack" />
-          </Button>
+          <Link to="/cart" style={{ textDecoration: "none" }}>
+            <Button isIcon color="#fff">
+              <Icon name="arrowBack" />
+            </Button>
+          </Link>
           <StyledDiv3>
             <h4>Card</h4>
           </StyledDiv3>
@@ -119,7 +122,9 @@ const Checkout = () => {
           <h2>Total</h2>
           <h2>€95.00</h2>
         </StyledDiv6>
-        <Button isStretched>Place Order</Button>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <Button isStretched>Place Order</Button>
+        </Link>
       </StyledDiv4>
     </div>
   );

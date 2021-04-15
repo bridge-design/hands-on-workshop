@@ -5,6 +5,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Avatar, Button, Icon, SummaryTable } from "design-system";
+import { Link } from "react-router-dom";
 
 import avatarImg from "../assets/avatar.png";
 import item1Img from "../assets/item1.png";
@@ -90,7 +91,6 @@ const Cart = () => {
           </StyledDiv4>
         </StyledDiv3>
         <StyledBorder />
-
         <StyledDiv5>
           <SummaryTable
             items={[
@@ -99,7 +99,9 @@ const Cart = () => {
             ]}
             total="€95.00"
           />
-          <Button isStretched>Checkout</Button>
+          <Link to="/checkout" style={{ textDecoration: "none" }}>
+            <Button isStretched>Checkout</Button>
+          </Link>
         </StyledDiv5>
       </StyledDiv1>
     </div>
