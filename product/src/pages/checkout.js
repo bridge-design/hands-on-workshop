@@ -32,25 +32,6 @@ const Styledh2 = styled.h2`
   margin-bottom: 36px;
 `;
 
-const StyledUl = styled.ul`
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0;
-  height: 36px;
-  align-items: flex-end;
-`;
-const StyledLi = styled.li`
-  list-style: none;
-  width: 8px;
-  height: 8px;
-  margin: 0 4px;
-  background-color: #040415;
-  opacity: 0.6;
-  border-radius: 50%;
-`;
-
 const StyledDiv4 = styled.div`
   padding: 40px;
 `;
@@ -72,13 +53,6 @@ const StyledBorder = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
   margin-top: 8px;
   margin-bottom: 32px;
-`;
-const StyledButton = styled(Button)`
-  width: 138px;
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 16px;
 `;
 
 const StyledDiv6 = styled.div`
