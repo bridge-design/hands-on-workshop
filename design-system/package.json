@@ -36,11 +36,13 @@
     "loki": "^0.28.1",
     "prettier": "^2.2.1",
     "storybook-addon-designs": "^5.4.5",
+    "style-dictionary": "^2.10.3",
     "url-loader": "^0.6.2",
     "webpack": "4.44.2",
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
+    "@reach/listbox": "^0.15.0",
     "core-js": "^3.9.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",

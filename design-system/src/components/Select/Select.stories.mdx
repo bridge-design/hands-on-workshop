@@ -1,0 +1,33 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
+
+import Select from ".";
+
+<Meta title="Components/Select" />
+
+## Select
+
+A dropdown list of values.
+
+export const options = [
+  { title: "DHL Express", value: "dhl" },
+  { title: "Fedex", value: "fedex" },
+  { title: "Pick up at store", value: "pickup" },
+];
+
+<Preview>
+  {/* Simple story without "controls" tab at the bottom.
+   * This tab is enabled by default, we can hide it explicitly (otherwise it will be shown empty */}
+  <Story name="Default" parameters={{ controls: { disable: true } }}>
+    <Select options={options} />
+  </Story>
+  {/* Story with configurable controls (component props can be changed via UI).
+   * To make controls available, we move component props into "args" prop of Story component.
+   * Props passed to Story args will be configurable in controls tab.
+   * Props passed directly to the component are not configurable.
+   * In order to pass starting props, we wrap component in a function */}
+  <Story
+    name="With default text"
+    args={{ defaultValue: "Select delivery...", options: options }}>
+    {(args) => <Select {...args} />}
+  </Story>
+</Preview>

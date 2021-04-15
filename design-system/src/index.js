@@ -5,7 +5,9 @@
  */
 
 export { default as GlobalStyle } from "./global.js";
-export { colors, typography } from "./tokens/dist";
 
+
+export { default as Avatar } from "./components/Avatar";
 export { default as Button } from "./components/Button";
 export { default as Icon } from "./components/Icon";
+export { default as Select } from "./components/Select";
