@@ -4,7 +4,7 @@
  */
 import React from "react";
 import styled from "styled-components";
-import { Button, Icon, Carousel } from "design-system";
+import { Button, Icon, Carousel, Select } from "design-system";
 
 import card from "../assets/card.svg";
 import cardBlue from "../assets/cardBlue.svg";
@@ -105,12 +105,6 @@ const Checkout = () => {
           </Button>
         </StyledDiv2>
         <Styledh2>Payment Method</Styledh2>
-        <img src={card} alt="card" />
-        <StyledUl>
-          <StyledLi />
-          <StyledLi />
-          <StyledLi />
-        </StyledUl>
         <Carousel
           images={[
             { source: card },
@@ -118,7 +112,6 @@ const Checkout = () => {
             { source: cardPink },
           ]}
         />
-        {/* </div> */}
       </StyledDiv1>
       <StyledDiv4>
         <StyledDiv5>
@@ -138,9 +131,13 @@ const Checkout = () => {
         </StyledDiv5>
         <p>Tarja A Grönholm</p>
         <StyledDiv6>
-          <StyledButton isOutline color="transparent">
-            DHL Express <Icon name="chevronDown" width="8" />
-          </StyledButton>
+          <Select
+            options={[
+              { title: "DHL Express", value: "dhl" },
+              { title: "Fedex", value: "fedex" },
+              { title: "Pick up at store", value: "pickup" },
+            ]}
+          />
           <p>€00.00</p>
         </StyledDiv6>
         <StyledBorder />
