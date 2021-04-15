@@ -9,9 +9,9 @@ import ${name} from ".";
 
 TODO: add component description
 
-<Canvas>
+<Preview>
   <Story name="Default">
     <${name}/>
   </Story>
-</Canvas>
+</Preview>
 `;
