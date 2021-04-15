@@ -1,0 +1,23 @@
+
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import Carousel from ".";
+import card from "./card.svg"
+import cardBlue from "./cardBlue.svg"
+import cardPink from "./cardPink.svg"
+
+<Meta title="Components/Carousel" />
+
+## Carousel
+
+Simple carousel to display payment method options
+
+
+export const images  = [{source: card}, {source: cardBlue}, {source: cardPink}];
+
+<Preview>
+  <Story name="Default">
+    <Carousel images={images}/>
+  </Story>
+</Preview>
+
