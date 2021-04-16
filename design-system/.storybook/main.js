@@ -1,8 +1,6 @@
 const path = require("path");
 const pathToInlineSvg = path.resolve(__dirname, "../src/components/Icon/svg");
 const webpack = require("webpack");
-const WatchExternalFilesPlugin = require("webpack-watch-files-plugin").default;
-const ExtraWatchWebpackPlugin = require("extra-watch-webpack-plugin");
 
 const tokensFileName = "design-tokens.json";
 const tokensPath = "./src/tokens/";

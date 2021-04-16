@@ -4,9 +4,12 @@
  */
 import React from "react";
 import styled from "styled-components";
-import { Button, Icon } from "design-system";
+import { Button, Icon, Carousel, Select } from "design-system";
+import { Link } from "react-router-dom";
 
-import cardImg from "../assets/Card.svg";
+import card from "../assets/card.svg";
+import cardBlue from "../assets/cardBlue.svg";
+import cardPink from "../assets/cardPink.svg";
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px 40px 40px;
@@ -28,25 +31,6 @@ const StyledDiv3 = styled.div`
 
 const Styledh2 = styled.h2`
   margin-bottom: 36px;
-`;
-
-const StyledUl = styled.ul`
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0;
-  height: 36px;
-  align-items: flex-end;
-`;
-const StyledLi = styled.li`
-  list-style: none;
-  width: 8px;
-  height: 8px;
-  margin: 0 4px;
-  background-color: #040415;
-  opacity: 0.6;
-  border-radius: 50%;
 `;
 
 const StyledDiv4 = styled.div`
@@ -71,13 +55,6 @@ const StyledBorder = styled.div`
   margin-top: 8px;
   margin-bottom: 32px;
 `;
-const StyledButton = styled(Button)`
-  width: 138px;
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 16px;
-`;
 
 const StyledDiv6 = styled.div`
   display: flex;
@@ -92,9 +69,11 @@ const Checkout = () => {
     <div>
       <StyledDiv1>
         <StyledDiv2>
-          <Button isIcon color="#fff">
-            <Icon name="arrowBack" />
-          </Button>
+          <Link to="/cart" style={{ textDecoration: "none" }}>
+            <Button isIcon color="#fff">
+              <Icon name="arrowBack" />
+            </Button>
+          </Link>
           <StyledDiv3>
             <h4>Card</h4>
           </StyledDiv3>
@@ -103,12 +82,13 @@ const Checkout = () => {
           </Button>
         </StyledDiv2>
         <Styledh2>Payment Method</Styledh2>
-        <img src={cardImg} alt="card" />
-        <StyledUl>
-          <StyledLi />
-          <StyledLi />
-          <StyledLi />
-        </StyledUl>
+        <Carousel
+          images={[
+            { source: card },
+            { source: cardBlue },
+            { source: cardPink },
+          ]}
+        />
       </StyledDiv1>
       <StyledDiv4>
         <StyledDiv5>
@@ -128,9 +108,13 @@ const Checkout = () => {
         </StyledDiv5>
         <p>Tarja A Grönholm</p>
         <StyledDiv6>
-          <StyledButton isOutline color="transparent">
-            DHL Express <Icon name="chevronDown" width="8" />
-          </StyledButton>
+          <Select
+            options={[
+              { title: "DHL Express", value: "dhl" },
+              { title: "Fedex", value: "fedex" },
+              { title: "Pick up at store", value: "pickup" },
+            ]}
+          />
           <p>€00.00</p>
         </StyledDiv6>
         <StyledBorder />
@@ -138,7 +122,9 @@ const Checkout = () => {
           <h2>Total</h2>
           <h2>€95.00</h2>
         </StyledDiv6>
-        <Button isStretched>Place Order</Button>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <Button isStretched>Place Order</Button>
+        </Link>
       </StyledDiv4>
     </div>
   );

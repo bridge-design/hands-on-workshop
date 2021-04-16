@@ -1,0 +1,30 @@
+import { Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
+
+import DataTable from ".";
+
+<Meta
+  title="Components/DataTable"
+  parameters={{
+    viewport: {
+      defaultViewport: "mobile1",
+    },
+  }}
+/>
+
+export const tableArgs = {
+  items: [
+    { name: "Subtotal", price: "€95.00" },
+    { name: "Estimated Delivery & Handling", price: "€0.00" },
+  ],
+  total: "€95.00"
+};
+
+## DataTable
+
+DataTable displays order details in a table, each row has information on name and price for each item.
+
+<Canvas>
+  <Story name="Default" args={tableArgs}>
+    {(args) => <DataTable {...args} />}
+  </Story>
+</Canvas>

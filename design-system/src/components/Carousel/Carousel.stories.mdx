@@ -1,0 +1,23 @@
+
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+
+import Carousel from ".";
+import card from "./card.svg"
+import cardBlue from "./cardBlue.svg"
+import cardPink from "./cardPink.svg"
+
+<Meta title="Components/Carousel" />
+
+## Carousel
+
+<!-- We export const only because MDX won't let us simply declare it (https://github.com/mdx-js/mdx/issues/390#issuecomment-461158808) -->
+export const images  = [{source: card}, {source: cardBlue}, {source: cardPink}];
+
+<Preview>
+  {/* Simple story without "controls" tab at the bottom.
+   * This tab is enabled by default, we can hide it explicitly (otherwise it will be shown empty */}
+  <Story name="Default" parameters={{ controls: { disable: true } }}>
+    <Carousel images={images}/>
+  </Story>
+</Preview>
+

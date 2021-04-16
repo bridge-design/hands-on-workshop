@@ -49,11 +49,12 @@ fs.readFile("./src/index.js", "utf8", function (err, data) {
  * Don't edit it directly, your chages will be overwritten.
  */
 
-export { default as GlobalStyle } from "./global.js";\n\n`;
+export { default as GlobalStyle } from "./global.js";
+export { colors, typography } from "./tokens";\n\n`;
 
   // create the import and export statements
   const exportStatements = newComponents
-    .filter(component => (component !== "GlobalStyle"))
+    .filter((component) => component !== "GlobalStyle")
     .map(
       (component) =>
         `export { default as ${component} } from "./components/${component}";\n`
