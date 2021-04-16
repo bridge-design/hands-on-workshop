@@ -32,8 +32,9 @@ design-system/
 ┣ node_modules/
 ┣ src/
 ┃ ┣ components/
+┃ ┃ ┣ Avatar/
 ┃ ┃ ┣ Button/
-┃ ┃ ┗ Icon/
+┃ ┃ ┗ ...
 ┃ ┣ tokens/
 ┃ ┃ ┣ dist/
 ┃ ┃ ┣ config.js
