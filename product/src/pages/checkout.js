@@ -4,16 +4,16 @@
  */
 import React from "react";
 import styled from "styled-components";
-import { Button, Icon, Carousel, Select } from "design-system";
+import { Button, Icon, Carousel, Select, colors } from "design-system";
 import { Link } from "react-router-dom";
 
-import card from "../assets/card.svg";
-import cardBlue from "../assets/cardBlue.svg";
-import cardPink from "../assets/cardPink.svg";
+const card = "/images/card.svg";
+const cardBlue = "/images/cardBlue.svg";
+const cardPink = "/images/cardPink.svg";
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px 40px 40px;
-  background-color: rgba(254, 237, 233, 1);
+  background-color: ${colors.primaryOrange10};
 `;
 
 const StyledDiv2 = styled.div`
@@ -44,14 +44,14 @@ const StyledDiv5 = styled.div`
 `;
 
 const StyledLink = styled.a`
-  color: #f15223;
+  color: ${colors.primaryOrange100};
   font-size: 18px;
 `;
 
 const StyledBorder = styled.div`
   width: 100%;
   height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: ${colors.secondaryBlack10};
   margin-top: 8px;
   margin-bottom: 32px;
 `;
@@ -70,14 +70,14 @@ const Checkout = () => {
       <StyledDiv1>
         <StyledDiv2>
           <Link to="/cart" style={{ textDecoration: "none" }}>
-            <Button isIcon color="#fff">
+            <Button isIcon color="white">
               <Icon name="arrowBack" />
             </Button>
           </Link>
           <StyledDiv3>
             <h4>Card</h4>
           </StyledDiv3>
-          <Button isIcon color="#fff">
+          <Button isIcon color="white">
             <Icon name="settings" />
           </Button>
         </StyledDiv2>

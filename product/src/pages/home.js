@@ -4,14 +4,55 @@
  */
 import React from "react";
 import styled from "styled-components";
-import { Avatar, Button, Icon } from "design-system";
+import { Avatar, Button, Icon, colors } from "design-system";
 import { Link } from "react-router-dom";
 
-import avatarImg from "../assets/avatar.png";
-import item1Img from "../assets/item1.png";
-import item2Img from "../assets/item2.png";
-import item3Img from "../assets/item3.png";
-import item4Img from "../assets/item4.png";
+const items = require("../data/products.json");
+const avatarSrc = "/images/avatar.png";
+
+const Home = () => {
+  return (
+    <div>
+      <StyledDiv1>
+        <StyledDiv2>
+          <Avatar src={avatarSrc} />
+          <Button isOutline>
+            <Icon name="menu" />
+          </Button>
+        </StyledDiv2>
+        <Styledh1>Store</Styledh1>
+
+        <StyledDiv3>
+          <h4>All Product</h4>
+
+          <StyledDiv4>
+            <StyledButton color="transparent">
+              <Icon name="viewItem" width={24} height={16} />
+            </StyledButton>
+            <StyledButton color="transparent">
+              <Icon name="viewGrid" width={24} height={16} />
+            </StyledButton>
+            <StyledBorder />
+            <StyledButton color="transparent">
+              <Icon name="filter" width={24} height={16} />
+            </StyledButton>
+          </StyledDiv4>
+        </StyledDiv3>
+        <StyledDiv5>
+          {Object.entries(items).map(([id, item]) => {
+            return (
+              <StyledLink key={id} to={`/details/${id}`}>
+                <StyledImg src={item.image} alt="" />
+                <h4>{item.name}</h4>
+                <StyledP>{item.price}</StyledP>
+              </StyledLink>
+            );
+          })}
+        </StyledDiv5>
+      </StyledDiv1>
+    </div>
+  );
+};
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px;
@@ -54,7 +95,7 @@ const StyledLink = styled(Link)`
 const StyledBorder = styled.div`
   width: 1px;
   height: 16px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: ${colors.primaryBlack10};
   margin: 0 8px;
 `;
 
@@ -73,64 +114,9 @@ const StyledButton = styled(Button)`
 `;
 
 const StyledP = styled.p`
-  color: #f15223;
+  color: ${colors.primaryOrange100};
   font-weight: 700;
   margin-top: 8px;
 `;
-
-const Home = () => {
-  return (
-    <div>
-      <StyledDiv1>
-        <StyledDiv2>
-          <Avatar src={avatarImg} />
-          <Button isOutline>
-            <Icon name="menu" />
-          </Button>
-        </StyledDiv2>
-        <Styledh1>Store</Styledh1>
-
-        <StyledDiv3>
-          <h4>All Product</h4>
-
-          <StyledDiv4>
-            <StyledButton color="transparent">
-              <Icon name="viewItem" width={24} height={16} />
-            </StyledButton>
-            <StyledButton color="transparent">
-              <Icon name="viewGrid" width={24} height={16} />
-            </StyledButton>
-            <StyledBorder />
-            <StyledButton color="transparent">
-              <Icon name="filter" width={24} height={16} />
-            </StyledButton>
-          </StyledDiv4>
-        </StyledDiv3>
-        <StyledDiv5>
-          <StyledLink to="/details">
-            <StyledImg src={item1Img} alt="" />
-            <h4>Nike Air Force 1 '07</h4>
-            <StyledP>€95.00</StyledP>
-          </StyledLink>
-          <StyledLink to="/details">
-            <StyledImg src={item2Img} alt="" />
-            <h4>Nike Air Shadow Force</h4>
-            <StyledP>€105.00</StyledP>
-          </StyledLink>
-          <StyledLink to="/details">
-            <StyledImg src={item3Img} alt="" />
-            <h4>Nike Air Force 1 '07</h4>
-            <StyledP>€95.00</StyledP>
-          </StyledLink>
-          <StyledLink to="/details">
-            <StyledImg src={item4Img} alt="" />
-            <h4>Nike Air Force 1 '07</h4>
-            <StyledP>€95.00</StyledP>
-          </StyledLink>
-        </StyledDiv5>
-      </StyledDiv1>
-    </div>
-  );
-};
 
 export default Home;

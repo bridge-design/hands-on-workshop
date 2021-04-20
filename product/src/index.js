@@ -29,8 +29,8 @@ const DevelopmentNav = () => (
     style={{ height: "50px", display: "flex", justifyContent: "space-around" }}
   >
     <Link to="/">Home</Link>
-    <Link to="/details">Details</Link>
-    <Link to="/cart">Cart</Link>
+    <Link to="/details/item1">Details</Link>
+    <Link to="/cart/item1">Cart</Link>
     <Link to="/checkout">Checkout</Link>
   </div>
 );
@@ -43,9 +43,9 @@ const App = () => (
     <StyledContainer>
       <GlobalStyle />
       <Route exact path="/" component={Home} />
-      <Route path="/details" component={Details} />
+      <Route path="/details/:id" render={(props) => <Details {...props} />} />
       <Route path="/checkout" component={Checkout} />
-      <Route path="/cart" component={Cart} />
+      <Route path="/cart/:id" render={(props) => <Cart {...props} />} />
     </StyledContainer>
   </Router>
 );

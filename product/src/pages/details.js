@@ -1,8 +1,49 @@
 import React from "react";
 import styled from "styled-components";
-import { Button, Icon } from "design-system";
-import itemImg from "../assets/item1.png";
+import { Button, Icon, colors } from "design-system";
 import { Link } from "react-router-dom";
+
+const items = require("../data/products.json");
+
+const Details = ({
+  match: {
+    params: { id },
+  },
+}) => {
+  const item = items[id];
+  return (
+    item && (
+      <div>
+        <StyledDiv1>
+          <StyledDiv2>
+            <Link to="/">
+              <Button isOutline>
+                <Icon name="arrowBack" />
+              </Button>
+            </Link>
+            <StyledDiv3>
+              <h4>{item.name}</h4>
+            </StyledDiv3>
+          </StyledDiv2>
+          <StyledDiv4>
+            <StyledDiv5>
+              <StyledButton isOutline>
+                <Icon name="heart" />
+              </StyledButton>
+              <StyledImg src={item.image} alt={item.name} />
+            </StyledDiv5>
+            <StyledP>{item.category}</StyledP>
+            <Styledh1>{item.name}</Styledh1>
+            <Styledh2>{item.price}</Styledh2>
+            <Link to={`/cart/${id}`} style={{ textDecoration: "none" }}>
+              <Button isStretched>Add to Cart</Button>
+            </Link>
+          </StyledDiv4>
+        </StyledDiv1>
+      </div>
+    )
+  );
+};
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px;
@@ -50,42 +91,8 @@ const Styledh1 = styled.h1`
   margin-bottom: 16px;
 `;
 const Styledh2 = styled.h2`
-  color: #f15223;
+  color: ${colors.primaryOrange100};
   margin-bottom: 40px;
 `;
-const Details = () => {
-  return (
-    <div>
-      <StyledDiv1>
-        <StyledDiv2>
-          <Link to="/">
-            <Button isOutline>
-              <Icon name="arrowBack" />
-            </Button>
-          </Link>
-          <StyledDiv3>
-            <h4>Nike Air Force 1 '07 LX</h4>
-          </StyledDiv3>
-        </StyledDiv2>
-        <StyledDiv4>
-          <StyledDiv5>
-            <StyledButton isOutline>
-              <Icon name="heart" />
-            </StyledButton>
-            <StyledImg src={itemImg} alt="" />
-          </StyledDiv5>
-          <StyledP> Men's Shoe</StyledP>
-          <Styledh1>
-            Nike Air Force 1{"\u00A0"}'07{"\u00A0"}LX
-          </Styledh1>
-          <Styledh2>€95.00</Styledh2>
-          <Link to="/cart" style={{ textDecoration: "none" }}>
-            <Button isStretched>Add to Cart</Button>
-          </Link>
-        </StyledDiv4>
-      </StyledDiv1>
-    </div>
-  );
-};
 
 export default Details;

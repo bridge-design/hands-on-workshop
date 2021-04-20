@@ -1,14 +1,52 @@
-/*
- * Each page is, in fact, a React component. It can import components from
- * the library and render them inside a container.
- */
 import React from "react";
 import styled from "styled-components";
-import { Avatar, Button, Icon, SummaryTable } from "design-system";
+import { Avatar, Button, Icon, SummaryTable, colors } from "design-system";
 import { Link } from "react-router-dom";
 
-import avatarImg from "../assets/avatar.png";
-import item1Img from "../assets/item1.png";
+const items = require("../data/products.json");
+const avatarSrc = "/images/avatar.png";
+
+const Cart = ({
+  match: {
+    params: { id },
+  },
+}) => {
+  const item = items[id];
+  return (
+    <div>
+      <StyledDiv1>
+        <StyledDiv2>
+          <Avatar src={avatarSrc} />
+          <Button isOutline>
+            <Icon name="menu" />
+          </Button>
+        </StyledDiv2>
+        <Styledh1>Shopping Cart</Styledh1>
+        <StyledDiv3>
+          <StyledImg src={item.image} alt="" />
+          <StyledDiv4>
+            <Styledh6>{item.name}</Styledh6>
+            <Styledh62>{item.price}</Styledh62>
+            <StyledP>{item.description}</StyledP>
+          </StyledDiv4>
+        </StyledDiv3>
+        <StyledBorder />
+        <StyledDiv5>
+          <SummaryTable
+            items={[
+              { name: "Subtotal", price: item.price },
+              { name: "Estimated Delivery & Handling", price: "€0.00" },
+            ]}
+            total={item.price}
+          />
+          <Link to="/checkout" style={{ textDecoration: "none" }}>
+            <Button isStretched>Checkout</Button>
+          </Link>
+        </StyledDiv5>
+      </StyledDiv1>
+    </div>
+  );
+};
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px;
@@ -66,46 +104,8 @@ const StyledP = styled.p`
 const StyledBorder = styled.div`
   width: 100%;
   height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: ${colors.secondaryBlack10};
   margin: 32px 0;
 `;
-
-const Cart = () => {
-  return (
-    <div>
-      <StyledDiv1>
-        <StyledDiv2>
-          <Avatar src={avatarImg} />
-          <Button isOutline>
-            <Icon name="menu" />
-          </Button>
-        </StyledDiv2>
-        <Styledh1>Shopping Cart</Styledh1>
-
-        <StyledDiv3>
-          <StyledImg src={item1Img} alt="" />
-          <StyledDiv4>
-            <Styledh6>Nike Air Force 1 '07</Styledh6>
-            <Styledh62>€95.00</Styledh62>
-            <StyledP>Men's Shoe, Black</StyledP>
-          </StyledDiv4>
-        </StyledDiv3>
-        <StyledBorder />
-        <StyledDiv5>
-          <SummaryTable
-            items={[
-              { name: "Subtotal", price: "€95.00" },
-              { name: "Estimated Delivery & Handling", price: "€0.00" },
-            ]}
-            total="€95.00"
-          />
-          <Link to="/checkout" style={{ textDecoration: "none" }}>
-            <Button isStretched>Checkout</Button>
-          </Link>
-        </StyledDiv5>
-      </StyledDiv1>
-    </div>
-  );
-};
 
 export default Cart;
